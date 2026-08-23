@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     اليونانية الكوينية (العهد الجديد) — الدرس الأول: الأبجدية، الأفعال، أسماء الصرف الأول
+     Developer: J0HNTHAN (https://github.com/J0HNTHAN)
+     Theme: pdf-to-html-COT / seminary-theological
+     Subject color: يوناني (Greek) → أصفر كناري Canary Yellow
+     Generated: 2026-08-03
+     ============================================================ -->
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اليونانية الكوينية — الدرس الأول</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== ROOT TOKENS — DARK (default) ===== */
+:root{
+  --primary:#F5C518;
+  --primary-light:#FFE066;
+  --primary-dim:#8a7412;
+  --primary-rgb:245,197,24;
+  --bg:#0e0e10;
+  --bg-alt:#17171a;
+  --card-bg:#1c1c20;
+  --card-bg-2:#212126;
+  --text:#e8e6e1;
+  --text-dim:#a8a6a0;
+  --border:#2a2a2e;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --green:#7cc576;
+  --red:#e8746a;
+}
+html[data-theme="light"]{
+  --primary:#8a6d00;
+  --primary-light:#b8930a;
+  --primary-dim:#e7dcb0;
+  --primary-rgb:138,109,0;
+  --bg:#fdfaf2;
+  --bg-alt:#f6f0dd;
+  --card-bg:#ffffff;
+  --card-bg-2:#fbf7ea;
+  --text:#2b2b28;
+  --text-dim:#5a564a;
+  --border:#e6dfc5;
+  --shadow: 0 10px 24px rgba(90,80,20,.12);
+  --green:#3f7a36;
+  --red:#a63328;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+html{
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+  width:100%;
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+}
+body{
+  font-family:'Cairo', sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.9;
+  transition:background .3s, color .3s;
+  overflow-x:hidden;
+  width:100%;
+  position:relative;
+}
+h1,h2,h3,h4,.font-serif{font-family:'Amiri', serif;}
+::selection{background:rgba(var(--primary-rgb),.35);}
+
+a{color:var(--primary-light); text-decoration:none;}
+
+/* ===== LAYOUT ===== */
+.layout{display:flex; min-height:100vh;}
+
+/* ===== SIDEBAR ===== */
+.sidebar{
+  width:300px; max-width:85vw; flex-shrink:0;
+  background:var(--bg-alt);
+  border-left:1px solid var(--border);
+  position:fixed; top:0; right:0; bottom:0;
+  overflow-y:auto; overflow-x:hidden;
+  padding:22px 16px 90px;
+  z-index:100;
+  transition:transform .3s ease, visibility .3s;
+}
+.sidebar::-webkit-scrollbar{width:6px;}
+.sidebar::-webkit-scrollbar-thumb{background:var(--border); border-radius:3px;}
+.side-brand{
+  display:flex; align-items:center; gap:10px; justify-content:space-between;
+  padding:6px 10px 18px; border-bottom:1px solid var(--border); margin-bottom:14px;
+}
+.side-brand .brand-text{flex:1; min-width:0;}
+.side-brand .glyph{
+  font-family:'Amiri',serif; font-size:1.7rem; color:var(--primary);
+  width:42px; height:42px; border-radius:10px;
+  background:rgba(var(--primary-rgb),.12);
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(var(--primary-rgb),.35);
+}
+.side-brand div h3{font-size:.95rem; color:var(--text);}
+.side-brand div span{font-size:.72rem; color:var(--text-dim);}
+
+.nav-section{margin-bottom:6px;}
+.nav-section-title{
+  display:flex; align-items:center; justify-content:space-between;
+  cursor:pointer; padding:10px 10px; border-radius:8px;
+  font-size:.86rem; font-weight:700; color:var(--primary-light);
+  user-select:none;
+}
+.nav-section-title:hover{background:rgba(var(--primary-rgb),.08);}
+.nav-section-title .arrow{transition:transform .25s; font-size:.7rem; color:var(--text-dim);}
+.nav-section.open .arrow{transform:rotate(90deg);}
+.nav-links{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+.nav-section.open .nav-links{max-height:600px;}
+.nav-link{
+  display:block; padding:8px 10px 8px 6px; margin-right:8px;
+  font-size:.82rem; color:var(--text-dim); border-right:2px solid var(--border);
+  transition:.2s;
+}
+.nav-link:hover{color:var(--primary-light); border-right-color:var(--primary);}
+.nav-link.active{color:var(--primary); border-right-color:var(--primary); background:rgba(var(--primary-rgb),.07); font-weight:700;}
+
+.burger{
+  display:none; position:fixed; top:14px; right:14px; z-index:200;
+  width:44px; height:44px; border-radius:10px;
+  background:var(--card-bg); border:1px solid var(--border);
+  align-items:center; justify-content:center; cursor:pointer;
+  box-shadow:var(--shadow);
+  transition:opacity .2s, transform .2s;
+}
+.burger.hidden{opacity:0; transform:scale(.8); pointer-events:none;}
+.burger span, .burger span::before, .burger span::after{
+  content:''; display:block; width:20px; height:2px; background:var(--text); position:relative; transition:.25s;
+}
+.burger span::before{position:absolute; top:-6px;}
+.burger span::after{position:absolute; top:6px;}
+
+/* sidebar close button — lives INSIDE the sidebar, so it moves together with it */
+.sidebar-close{
+  display:none; width:36px; height:36px; border-radius:9px;
+  background:var(--card-bg); border:1px solid var(--border); color:var(--text-dim);
+  align-items:center; justify-content:center; cursor:pointer; font-size:1.1rem; flex-shrink:0;
+}
+
+/* backdrop shown behind the open mobile sidebar; tap anywhere on it to close */
+.sidebar-overlay{
+  display:none; position:fixed; inset:0; background:rgba(0,0,0,.75); z-index:95;
+  opacity:0; transition:opacity .3s; backdrop-filter:blur(2px);
+}
+.sidebar-overlay.show{display:block; opacity:1;}
+
+/* ===== MAIN ===== */
+.main{margin-right:300px; flex:1; min-width:0;}
+
+.theme-toggle{
+  position:fixed; top:16px; left:16px; z-index:150;
+  width:46px; height:46px; border-radius:50%;
+  background:var(--card-bg); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; font-size:1.2rem; box-shadow:var(--shadow);
+}
+
+.lang-toggle{
+  position:fixed; top:16px; left:70px; z-index:150;
+  height:46px; padding:0 16px; border-radius:23px;
+  background:var(--card-bg); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center; gap:6px;
+  cursor:pointer; font-size:.85rem; font-weight:700; color:var(--text-dim);
+  box-shadow:var(--shadow); font-family:'Cairo',sans-serif; transition:.2s;
+  direction:ltr;
+}
+.lang-toggle:hover{border-color:rgba(var(--primary-rgb),.5); color:var(--primary-light);}
+.lang-toggle .lang-dot{
+  width:7px; height:7px; border-radius:50%; background:var(--border); transition:.2s;
+}
+body.show-en .lang-toggle .lang-dot{background:var(--primary);}
+@media(max-width:520px){
+  .lang-toggle{left:64px; padding:0 12px; font-size:.78rem;}
+}
+
+.hero{
+  padding:70px 50px 50px; position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(var(--primary-rgb),.14), transparent 45%),
+    var(--bg);
+  border-bottom:1px solid var(--border);
+}
+.hero-ornament{
+  position:absolute; top:-40px; left:-10px; font-family:'Amiri',serif;
+  font-size:15rem; color:var(--primary); opacity:.05; pointer-events:none; line-height:1;
+}
+.hero .tag{
+  display:inline-block; font-size:.78rem; letter-spacing:.05em;
+  color:var(--primary); border:1px solid rgba(var(--primary-rgb),.4);
+  background:rgba(var(--primary-rgb),.08); padding:5px 14px; border-radius:30px;
+  margin-bottom:18px;
+}
+.hero h1{font-size:2.5rem; margin-bottom:10px; color:var(--text);}
+.hero h1 em{color:var(--primary); font-style:normal;}
+.hero p.lead{font-size:1.05rem; color:var(--text-dim); max-width:760px;}
+.hero .greek-strip{
+  margin-top:22px; font-family:'Amiri',serif; font-size:1.6rem; color:var(--primary-light);
+  letter-spacing:.08em; direction:ltr; text-align:left;
+}
+
+.container{padding:10px 50px 40px;}
+
+/* ===== CHAPTER ===== */
+.chapter{padding:30px 0 10px; border-top:1px dashed var(--border); margin-top:10px;}
+.chapter:first-child{border-top:none;}
+.chapter-head{display:flex; align-items:center; gap:16px; margin-bottom:6px;}
+.chapter-num{
+  width:52px; height:52px; border-radius:14px; flex-shrink:0;
+  background:linear-gradient(145deg, rgba(var(--primary-rgb),.22), rgba(var(--primary-rgb),.06));
+  border:1px solid rgba(var(--primary-rgb),.4);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Amiri',serif; font-size:1.4rem; color:var(--primary);
+}
+.chapter-head h2{font-size:1.6rem; color:var(--text);}
+.chapter-sub{color:var(--text-dim); font-size:.9rem; margin-right:68px; margin-bottom:14px;}
+
+.section{margin:26px 0; scroll-margin-top:24px;}
+.subsection-title{
+  font-size:1.15rem; font-weight:700; color:var(--primary-light);
+  margin-bottom:10px; padding-right:12px; border-right:3px solid var(--primary);
+}
+p{margin-bottom:12px; color:var(--text);}
+.small-note{font-size:.85rem; color:var(--text-dim);}
+
+/* ===== GREEK INLINE ===== */
+.gk{font-family:'Amiri',serif; direction:ltr; unicode-bidi:isolate; color:var(--primary-light); font-size:1.08em;}
+.tr{direction:ltr; unicode-bidi:isolate; color:var(--text-dim); font-style:italic;}
+
+/* ===== CARDS / VOCAB ===== */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; margin:14px 0;}
+.card{
+  background:var(--card-bg); border:1px solid var(--border); border-radius:12px;
+  padding:14px 16px; transition:.2s;
+}
+.card:hover{border-color:rgba(var(--primary-rgb),.5); transform:translateY(-2px);}
+.card .gk-word{font-family:'Amiri',serif; direction:ltr; text-align:left; font-size:1.3rem; color:var(--primary); margin-bottom:4px;}
+.card .translit{direction:ltr; text-align:left; font-size:.82rem; color:var(--text-dim); margin-bottom:6px;}
+.card .meaning{font-size:.92rem; color:var(--text);}
+.card .meaning-en{font-size:.78rem; color:var(--text-dim); font-style:italic; direction:ltr; text-align:left; margin-top:2px; display:none;}
+body.show-en .card .meaning-en{display:block;}
+
+/* ===== INFO / KEY-POINT / VERSE ===== */
+.info-box{
+  background:var(--card-bg-2); border:1px solid var(--border); border-right:4px solid var(--primary);
+  border-radius:10px; padding:16px 18px; margin:16px 0;
+}
+.info-box .lbl{font-weight:700; color:var(--primary); margin-bottom:6px; display:block;}
+
+.key-point{
+  background:linear-gradient(135deg, rgba(var(--primary-rgb),.14), rgba(var(--primary-rgb),.03));
+  border:1px solid rgba(var(--primary-rgb),.4); border-radius:10px;
+  padding:14px 18px; margin:16px 0; font-weight:600;
+}
+.key-point::before{content:"✺ "; color:var(--primary);}
+
+.verse-box{
+  background:var(--card-bg); border:1px solid var(--border); border-radius:12px;
+  padding:18px 22px; margin:16px 0; text-align:center;
+}
+.verse-box .gk{font-size:1.5rem; display:block; margin-bottom:8px;}
+.verse-box .tr{display:block; font-size:.95rem;}
+.verse-box .mean{display:block; color:var(--text); margin-top:6px; font-size:.92rem;}
+
+/* ===== DATA TABLE / PARADIGM ===== */
+.table-wrap{overflow-x:auto; margin:16px 0; border-radius:12px; border:1px solid var(--border); position:relative; -webkit-overflow-scrolling:touch;}
+table.data-table{width:100%; border-collapse:collapse; min-width:520px;}
+table.data-table th{
+  background:rgba(var(--primary-rgb),.12); color:var(--primary-light);
+  padding:10px 12px; font-size:.85rem; text-align:center; border-bottom:1px solid var(--border);
+  white-space:nowrap;
+}
+table.data-table td{
+  padding:9px 12px; text-align:center; border-bottom:1px solid var(--border); font-size:.92rem;
+}
+/* keep the first column (the Greek letter/word) pinned while the rest scrolls horizontally */
+table.data-table th:first-child, table.data-table td:first-child{
+  position:sticky; right:0; z-index:2; box-shadow:-6px 0 8px -6px rgba(0,0,0,.35);
+}
+table.data-table td:first-child{background:var(--card-bg);}
+table.data-table th:first-child{background:var(--bg-alt);}
+table.data-table td.gk, table.data-table td .gk{direction:ltr;}
+table.data-table tr:last-child td{border-bottom:none;}
+table.data-table tr:hover td{background:rgba(var(--primary-rgb),.05);}
+.table-wrap::after{
+  content:''; position:absolute; top:0; bottom:0; left:0; width:22px;
+  background:linear-gradient(to left, transparent, var(--bg-alt));
+  opacity:0; pointer-events:none; transition:opacity .2s;
+}
+
+.grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:16px 0;}
+@media(max-width:720px){.grid-2{grid-template-columns:1fr;}}
+.col-box{background:var(--card-bg); border:1px solid var(--border); border-radius:12px; padding:16px;}
+.col-box h4{color:var(--primary-light); margin-bottom:8px; font-size:1rem;}
+
+/* ===== EXERCISE / EXAM Q&A ===== */
+.score-box{
+  position:sticky; top:8px; z-index:5;
+  display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  background:var(--card-bg-2); border:1px solid var(--border);
+  border-radius:12px; padding:10px 18px; margin:16px 0;
+}
+.score-box span{color:var(--text-dim); font-size:.9rem;}
+.score-box b{color:var(--primary);}
+
+.exercise-block{
+  background:var(--card-bg); border:1px solid var(--border); border-radius:14px;
+  padding:20px 22px; margin:18px 0;
+}
+.exercise-block > h4{color:var(--primary); margin-bottom:12px; font-size:1.05rem;}
+.qa{border-top:1px solid var(--border); padding:14px 0;}
+.qa:first-of-type{border-top:none; padding-top:4px;}
+.qa .q{display:flex; gap:10px; align-items:flex-start; margin-bottom:8px;}
+.qa .qnum{
+  flex-shrink:0; width:26px; height:26px; border-radius:50%;
+  background:rgba(var(--primary-rgb),.16); color:var(--primary);
+  display:flex; align-items:center; justify-content:center; font-size:.8rem; font-weight:700;
+}
+.qa .qtext{flex:1; padding-top:2px;}
+.qa .qtext .gk{font-size:1.05rem;}
+.reveal-btn{
+  background:none; border:1px solid var(--primary-dim); color:var(--primary-light);
+  border-radius:8px; padding:6px 14px; font-size:.82rem; cursor:pointer; font-family:'Cairo',sans-serif;
+  margin-right:36px; transition:.2s;
+}
+.reveal-btn:hover{background:rgba(var(--primary-rgb),.1); border-color:var(--primary);}
+.answer{
+  display:none; margin:10px 0 0 0; margin-right:36px;
+  background:var(--bg-alt); border-right:3px solid var(--green); border-radius:8px;
+  padding:12px 14px; font-size:.92rem;
+}
+.answer.open{display:block;}
+.answer .ans-line{color:var(--green); font-weight:700; margin-bottom:6px;}
+.answer .ans-line-en{color:var(--text-dim); font-style:italic; font-weight:400; direction:ltr; text-align:left; font-size:.86rem; margin-bottom:8px; display:none;}
+body.show-en .answer .ans-line-en{display:block;}
+.answer .why{color:var(--text-dim);}
+
+/* ===== GENERAL BILINGUAL TOGGLE (paragraphs, info/key/verse boxes, why-explanations, exercise prompts, headers) ===== */
+.en-tr{display:none; direction:ltr; text-align:left; font-style:italic; color:var(--text-dim); margin-top:6px; font-size:.92em; unicode-bidi:isolate;}
+body.show-en .en-tr{display:block;}
+.en-tr-inline{display:none; direction:ltr; unicode-bidi:isolate; font-style:italic; color:var(--text-dim); font-size:.9em;}
+body.show-en .en-tr-inline{display:inline;}
+.hero .en-tr{color:rgba(var(--primary-rgb),.7); font-size:.9rem; margin-top:10px;}
+.chapter-sub .en-tr{margin-top:2px; font-size:.85em;}
+.subsection-title .en-tr{font-weight:400; font-size:.75em; margin-top:2px; border:none; padding:0;}
+footer .en-tr{margin-top:4px; font-size:.85em;}
+
+/* MCQ options — midterm exam */
+.mcq-options{display:flex; flex-direction:column; gap:8px; margin:10px 0 6px; margin-right:36px;}
+.mcq-option{
+  text-align:right; background:var(--bg-alt); border:1px solid var(--border); border-radius:9px;
+  padding:10px 14px; cursor:pointer; font-family:'Cairo',sans-serif; font-size:.92rem; color:var(--text);
+  transition:.15s; display:flex; align-items:center; justify-content:space-between; gap:10px;
+}
+.mcq-option:hover:not(.locked){border-color:var(--primary); background:rgba(var(--primary-rgb),.06);}
+.mcq-option .gk{font-size:1rem;}
+.mcq-option.correct{background:rgba(124,197,118,.14); border-color:var(--green); color:var(--green); font-weight:700;}
+.mcq-option.wrong{background:rgba(232,116,106,.12); border-color:var(--red); color:var(--red);}
+.mcq-option.locked{cursor:default;}
+.mcq-explain{
+  display:none; margin:8px 0 0; margin-right:36px;
+  background:var(--bg-alt); border-right:3px solid var(--primary); border-radius:8px;
+  padding:12px 14px; font-size:.9rem; color:var(--text-dim);
+}
+.mcq-explain.open{display:block;}
+.qtype-tag{
+  display:inline-block; font-size:.7rem; color:var(--primary); background:rgba(var(--primary-rgb),.12);
+  border:1px solid rgba(var(--primary-rgb),.35); border-radius:20px; padding:2px 10px; margin-right:8px;
+}
+
+/* ===== FOOTER / BADGE ===== */
+footer{
+  text-align:center; padding:40px 20px 100px; color:var(--text-dim); font-size:.85rem;
+  border-top:1px solid var(--border); margin-top:20px;
+}
+footer .fname{color:var(--primary-light); font-weight:700;}
+
+.gh-badge{
+  position:fixed; bottom:14px; left:14px; z-index:150;
+  display:flex; align-items:center; gap:8px;
+  background:var(--card-bg); border:1px solid var(--border);
+  padding:8px 14px; border-radius:30px; font-size:.78rem; color:var(--text-dim);
+  box-shadow:var(--shadow);
+}
+.gh-badge a{color:var(--primary-light); font-weight:700;}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:980px){
+  .sidebar{transform:translateX(100%); visibility:hidden; box-shadow:var(--shadow);}
+  .sidebar.show{transform:translateX(0); visibility:visible;}
+  .sidebar-close{display:flex;}
+  .main{margin-right:0;}
+  .burger{display:flex;}
+  .hero{padding:80px 24px 36px;}
+  .container{padding:10px 20px 30px;}
+  .hero h1{font-size:1.8rem;}
+  .gh-badge{font-size:.7rem; padding:6px 10px;}
+}
+@media(max-width:720px){
+  .table-wrap::after{opacity:1;}
+  table.data-table th, table.data-table td{padding:8px 10px;}
+}
+@media(max-width:480px){
+  .chapter-sub{margin-right:0; margin-top:4px;}
+  .chapter-head{flex-wrap:wrap;}
+  table.data-table{font-size:.78rem; min-width:460px;}
+  table.data-table th, table.data-table td{padding:7px 8px;}
+  .reveal-btn, .answer, .mcq-options, .mcq-explain{margin-right:14px;}
+  .exercise-block{padding:16px 14px;}
+  .verse-box .gk{font-size:1.25rem;}
+  .card .gk-word{font-size:1.15rem;}
+}
+</style>
+</head>
+<body>
+
+<div class="burger" id="burgerBtn" onclick="toggleSidebar(true)"><span></span></div>
+<div class="theme-toggle" onclick="toggleTheme()" id="themeBtn">🌙</div>
+<div class="lang-toggle" onclick="toggleLang()" id="langBtn"><span class="lang-dot"></span><span id="langBtnText">EN</span></div>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar(false)"></div>
+
+<div class="layout">
+
+  <!-- ============================================================ SIDEBAR ============================================================ -->
+  <nav class="sidebar" id="sidebar">
+    <div class="side-brand">
+      <div class="glyph">Ω</div>
+      <div class="brand-text">
+        <h3>اليونانية الكوينية</h3>
+        <span>Koine Greek — يوناني</span>
+      </div>
+      <div class="sidebar-close" onclick="toggleSidebar(false)">✕</div>
+    </div>
+
+    <div class="nav-section open">
+      <div class="nav-section-title" onclick="toggleNav(this)"><span>الدرس الأول: الأبجدية</span><span class="arrow">◂</span></div>
+      <div class="nav-links">
+        <a class="nav-link" href="#l1-letters">أ. حروف الأبجدية</a>
+        <a class="nav-link" href="#l1-vowels">ب. الحروف الصوتية والثنائيات</a>
+        <a class="nav-link" href="#l1-breathing">ج. علامتا التنفّس</a>
+        <a class="nav-link" href="#l1-consonants">د. تصنيف الحروف الساكنة</a>
+        <a class="nav-link" href="#l1-vocab">هـ. المفردات</a>
+        <a class="nav-link" href="#l1-exercise">و. التمرين الأول (مشروح)</a>
+      </div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title" onclick="toggleNav(this)"><span>الدرس الثاني: الأفعال</span><span class="arrow">◂</span></div>
+      <div class="nav-links">
+        <a class="nav-link" href="#l2-conjugation">أ. تصريف λύω</a>
+        <a class="nav-link" href="#l2-negation">ب. النفي والمصدر</a>
+        <a class="nav-link" href="#l2-vocab">ج. المفردات</a>
+        <a class="nav-link" href="#l2-exercise">د. التمرين الثاني (مشروح)</a>
+      </div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title" onclick="toggleNav(this)"><span>الدرس الثالث: أسماء الصرف الأول</span><span class="arrow">◂</span></div>
+      <div class="nav-links">
+        <a class="nav-link" href="#l3-feminine">أ. المؤنث</a>
+        <a class="nav-link" href="#l3-masculine">ب. المذكر</a>
+        <a class="nav-link" href="#l3-vocab">ج. المفردات</a>
+        <a class="nav-link" href="#l3-exercise">د. التمرين الثالث (مشروح)</a>
+      </div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title" onclick="toggleNav(this)"><span>الدرس الرابع: أسماء الصرف الثاني</span><span class="arrow">◂</span></div>
+      <div class="nav-links">
+        <a class="nav-link" href="#l4-declension">أ. الجدول الصرفي (مذكر، مؤنث، محايد)</a>
+        <a class="nav-link" href="#l4-vocab">ب. المفردات</a>
+        <a class="nav-link" href="#l4-prepositions">ج. حروف الجرّ (Prepositions)</a>
+        <a class="nav-link" href="#l4-exercise">د. التمرين الرابع (مشروح)</a>
+      </div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title" onclick="toggleNav(this)"><span>الإعراب</span><span class="arrow">◂</span></div>
+      <div class="nav-links">
+        <a class="nav-link" href="#parsing">كيف نُعرب الكلمة اليونانية؟</a>
+      </div>
+    </div>
+
+    <div class="nav-section">
+      <div class="nav-section-title" onclick="toggleNav(this)"><span>الاختبارات الشاملة</span><span class="arrow">◂</span></div>
+      <div class="nav-links">
+        <a class="nav-link" href="#exam1">اختبار الدرس الأول</a>
+        <a class="nav-link" href="#exam2">اختبار الدرس الثاني</a>
+        <a class="nav-link" href="#exam3">اختبار الدرس الثالث</a>
+        <a class="nav-link" href="#midterm">اختبار منتصف الفصل المتوقع</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ MAIN ============================================================ -->
+  <div class="main">
+
+    <div class="hero">
+      <span class="hero-ornament">Ω</span>
+      <span class="tag">الكلية الإكليريكية · مادة اليونانية · الدرس الأول<span class="en-tr-inline"> · Seminary · Greek · Lesson One</span></span>
+      <h1>مدخل إلى <em>اليونانية الكوينية</em></h1>
+      <p class="lead">
+        شرح مفصّل بالعربية والإنجليزية للأبجدية اليونانية، والأفعال في الأزمنة الأساسية، وأسماء الصرف الأول،
+        مع نطق كل كلمة، وتمارين مشروحة خطوة بخطوة، واختبار شامل مستقل لكل درس لتثبيت الفهم.
+      </p>
+      <div class="en-tr">A detailed bilingual introduction to the Greek alphabet, verbs in the core tenses, and first-declension nouns — with pronunciation for every word, fully-explained exercises, and a standalone comprehensive test for each lesson to lock in understanding.</div>
+      <div class="greek-strip">Ἐν ἀρχῇ ἦν ὁ Λόγος — καὶ ὁ Λόγος ἦν πρὸς τὸν Θεόν</div>
+    </div>
+
+    <div class="container">
+
+      <!-- ================= CHAPTER 1 : ALPHABET ================= -->
+      <section class="chapter ch-1">
+        <div class="chapter-head">
+          <div class="chapter-num">Α</div>
+          <h2>الدرس الأول — الأبجدية اليونانية (Το Ελληνικό Αλφάβητο)<div class="en-tr" style="font-size:.55em; margin-top:4px">Lesson One — The Greek Alphabet</div></h2>
+        </div>
+        <p class="chapter-sub">24 حرفًا، حروف العلة، الثنائيات الصوتية، علامتا التنفّس، وتصنيف الحروف الساكنة.<div class="en-tr">24 letters, the vowels, diphthongs, the two breathing marks, and the classification of consonants.</div></p>
+
+        <div class="section" id="l1-letters">
+          <div class="subsection-title">أ. حروف الأبجدية اليونانية (24 حرفًا)<div class="en-tr">A. The Letters of the Greek Alphabet (24 letters)</div></div>
+          <p>
+            تتكوّن الأبجدية اليونانية من 24 حرفًا، لكل حرف صورة كبيرة (Upper Case) وصورة صغيرة (Lower Case) واسم ونطق.
+            لاحظ أن بعض الحروف اليونانية تشبه حروفنا اللاتينية في الشكل لكنها تُنطق نطقًا مختلفًا تمامًا (مثل <span class="gk">Ρ ρ</span> التي تُكتب مثل P اللاتينية لكنها تُنطق «ر»)، وهذا أول فخّ يقع فيه المبتدئ.
+          </p>
+          <div class="en-tr">The Greek alphabet consists of 24 letters, each with an upper-case form, a lower-case form, a name, and a pronunciation. Note that some Greek letters look like our Latin letters but are pronounced completely differently (e.g. Ρ ρ, which is written like the Latin P but pronounced 'r') — this is the first trap beginners fall into.</div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <tr><th>كبير<span class="en-tr-inline"><br>Upper</span></th><th>صغير<span class="en-tr-inline"><br>Lower</span></th><th>الاسم<span class="en-tr-inline"><br>Name</span></th><th>النطق (عربي)<span class="en-tr-inline"><br>Pronunciation guide</span></th><th>Transliteration</th></tr>
+              <tr><td class="gk">Α</td><td class="gk">α</td><td>Alpha</td><td>a — كالفتحة العربية</td><td class="tr">a</td></tr>
+              <tr><td class="gk">Β</td><td class="gk">β</td><td>Bêta / Vêta</td><td>ب / v (في اليونانية الحديثة v)</td><td class="tr">b</td></tr>
+              <tr><td class="gk">Γ</td><td class="gk">γ</td><td>Gamma</td><td>غ (احتكاكية) أو g قبل a,o,u</td><td class="tr">g</td></tr>
+              <tr><td class="gk">Δ</td><td class="gk">δ</td><td>Delta</td><td>th كما في this الإنجليزية</td><td class="tr">d</td></tr>
+              <tr><td class="gk">Ε</td><td class="gk">ε</td><td>Epsilon</td><td>e قصيرة كالفتحة</td><td class="tr">e</td></tr>
+              <tr><td class="gk">Ζ</td><td class="gk">ζ</td><td>Zêta</td><td>z</td><td class="tr">z</td></tr>
+              <tr><td class="gk">Η</td><td class="gk">η</td><td>Ệta</td><td>ê طويلة (بين الفتحة والكسرة الممدودة)</td><td class="tr">ē</td></tr>
+              <tr><td class="gk">Θ</td><td class="gk">θ</td><td>Thêta</td><td>th كما في think الإنجليزية</td><td class="tr">th</td></tr>
+              <tr><td class="gk">Ι</td><td class="gk">ι</td><td>Iota</td><td>i — كالكسرة</td><td class="tr">i</td></tr>
+              <tr><td class="gk">Κ</td><td class="gk">κ</td><td>Kappa</td><td>k</td><td class="tr">k / c</td></tr>
+              <tr><td class="gk">Λ</td><td class="gk">λ</td><td>Lambda</td><td>l</td><td class="tr">l</td></tr>
+              <tr><td class="gk">Μ</td><td class="gk">μ</td><td>Mu</td><td>m</td><td class="tr">m</td></tr>
+              <tr><td class="gk">Ν</td><td class="gk">ν</td><td>Nu</td><td>n</td><td class="tr">n</td></tr>
+              <tr><td class="gk">Ξ</td><td class="gk">ξ</td><td>Xi</td><td>ks</td><td class="tr">x</td></tr>
+              <tr><td class="gk">Ο</td><td class="gk">ο</td><td>Omicron</td><td>o قصيرة</td><td class="tr">o</td></tr>
+              <tr><td class="gk">Π</td><td class="gk">π</td><td>Pi</td><td>p</td><td class="tr">p</td></tr>
+              <tr><td class="gk">Ρ</td><td class="gk">ρ</td><td>Rho</td><td>r (راء مرقّقة)</td><td class="tr">r / rh</td></tr>
+              <tr><td class="gk">Σ</td><td class="gk">σ, ς</td><td>Sigma</td><td>s (تُكتب ς في آخر الكلمة فقط)</td><td class="tr">s</td></tr>
+              <tr><td class="gk">Τ</td><td class="gk">τ</td><td>Tau</td><td>t</td><td class="tr">t</td></tr>
+              <tr><td class="gk">Υ</td><td class="gk">υ</td><td>Upsilon</td><td>u فرنسية / v في الثنائيات</td><td class="tr">u / y / v</td></tr>
+              <tr><td class="gk">Φ</td><td class="gk">φ</td><td>Phi</td><td>f</td><td class="tr">ph</td></tr>
+              <tr><td class="gk">Χ</td><td class="gk">χ</td><td>Chi</td><td>خ</td><td class="tr">ch</td></tr>
+              <tr><td class="gk">Ψ</td><td class="gk">ψ</td><td>Psi</td><td>ps</td><td class="tr">ps</td></tr>
+              <tr><td class="gk">Ω</td><td class="gk">ω</td><td>Omega</td><td>ô طويلة</td><td class="tr">ō</td></tr>
+            </table>
+          </div>
+          <div class="key-point">
+            لاحظ الفرق بين <span class="gk">Ε ε</span> (Epsilon — قصيرة) و<span class="gk">Η η</span> (Ệta — طويلة)، وكذلك بين <span class="gk">Ο ο</span> (Omicron — قصيرة) و<span class="gk">Ω ω</span> (Omega — طويلة). هذا التمييز بين الحرف القصير والحرف الطويل جوهريٌّ في الشِّعر والنبر اليوناني ولاحقًا في قواعد التصريف.
+            <div class="en-tr">Note the difference between Ε ε (Epsilon — short) and Η η (Ệta — long), and likewise between Ο ο (Omicron — short) and Ω ω (Omega — long). This distinction between the short and long letter is essential in Greek poetry and accent, and later in the rules of conjugation and declension.</div>
+          </div>
+          <div class="info-box">
+            <span class="lbl">تبسيط سريع للمبتدئ</span>
+            لا تحاول حفظ الـ24 حرفًا دفعة واحدة. قسّمهم في ذهنك إلى ثلاث مجموعات: (1) حروف شكلها ونطقها زي اللاتينية (<span class="gk">Α Ι Κ Μ Ν Ο Τ</span>)، (2) حروف شكلها لاتيني لكن نطقها مختلف تمامًا — دي المجموعة اللي بتوقع المبتدئين في الغلط (<span class="gk">Β Η Ρ Χ</span>)، (3) حروف شكلها جديد كليًّا عليك (<span class="gk">Γ Δ Θ Λ Ξ Π Σ Φ Ψ Ω</span>). ركّز حفظك الأول على المجموعة الثانية لأنها الأخطر.
+            <div class="en-tr">Don't try to memorize all 24 letters at once. Split them mentally into three groups: (1) letters that look and sound like Latin ones (Α Ι Κ Μ Ν Ο Τ), (2) letters that look Latin but sound completely different — this is the group that trips up beginners (Β Η Ρ Χ), (3) letters that are entirely new shapes to you (Γ Δ Θ Λ Ξ Π Σ Φ Ψ Ω). Focus your first round of memorization on group two, since it's the most dangerous.</div>
+          </div>
+        </div>
+
+        <div class="section" id="l1-vowels">
+          <div class="subsection-title">ب. الحروف الصوتية (Vowels) والثنائيات الصوتية (Diphthongs)<div class="en-tr">B. Vowels and Diphthongs</div></div>
+          <p>عدد حروف العلّة في اليونانية سبعة: <span class="gk">α, ε, η, ι, ο, υ, ω</span>، وتنقسم بحسب الكمّية (الطول الصوتي) إلى:</p>
+          <div class="en-tr">Greek has seven vowels: α, ε, η, ι, ο, υ, ω, divided by quantity (vowel length) as follows:</div>
+          <div class="grid-2">
+            <div class="col-box">
+              <h4>طويلة دائمًا (Long)</h4>
+              <p class="gk" style="font-size:1.3rem">η, ω</p>
+            </div>
+            <div class="col-box">
+              <h4>قصيرة دائمًا (Short)</h4>
+              <p class="gk" style="font-size:1.3rem">ε, ο</p>
+            </div>
+          </div>
+          <div class="info-box">
+            <span class="lbl">مشكوك فيها / مزدوجة (Doubtful)</span>
+            <span class="gk" style="font-size:1.3rem">α, ι, υ</span> — قد تُنطق طويلة أو قصيرة بحسب موضعها في الكلمة، ولا تُعرف كمّيتها إلا بالحفظ أو من علامة المدّ فوقها في بعض الطبعات.
+            <div class="en-tr">α, ι, υ — may be pronounced long or short depending on their position in the word; their quantity can only be known by memorization or from a length mark in some printed editions.</div>
+          </div>
+
+          <p>أمّا <b>الثنائيات الصوتية</b> فهي اجتماع صوتين متجاورين ينطقان مقطعًا واحدًا، وتنقسم إلى نوعين:</p>
+          <div class="en-tr">As for the diphthongs, they are two adjacent vowel sounds pronounced as a single syllable, and they fall into two types:</div>
+          <div class="grid-2">
+            <div class="col-box">
+              <h4>ثنائيات ظاهرة (Proper Diphthongs)</h4>
+              <div class="table-wrap" style="margin:8px 0">
+                <table class="data-table">
+                  <tr><th>الثنائية<span class="en-tr-inline"><br>Diphthong</span></th><th>النطق<span class="en-tr-inline"><br>Sound</span></th></tr>
+                  <tr><td class="gk">αι</td><td>ai / ae</td></tr>
+                  <tr><td class="gk">ει</td><td>ei</td></tr>
+                  <tr><td class="gk">οι</td><td>oi / oe</td></tr>
+                  <tr><td class="gk">ου</td><td>ou (كالضمة الممدودة)</td></tr>
+                  <tr><td class="gk">αυ</td><td>au</td></tr>
+                  <tr><td class="gk">ευ</td><td>eu</td></tr>
+                  <tr><td class="gk">ηυ</td><td>ēu</td></tr>
+                  <tr><td class="gk">υι</td><td>yi / ui</td></tr>
+                </table>
+              </div>
+            </div>
+            <div class="col-box">
+              <h4>ثنائيات خفيّة (Improper Diphthongs)</h4>
+              <p>هي اجتماع حرف علّة طويل مع <span class="gk">ι</span> صغيرة تُكتب تحت السطر (iota subscript) ولا تُنطق منفصلة، بل تُشير فقط إلى حالة إعرابية (كالدائيّة/Dative):</p>
+              <div class="en-tr">These are a long vowel joined with a small ι written beneath the line (iota subscript); it isn't pronounced separately, and only marks a grammatical case (such as the Dative):</div>
+              <p class="gk" style="font-size:1.4rem; text-align:center; margin-top:10px">ᾳ &nbsp; ῃ &nbsp; ῳ</p>
+              <p class="small-note">مثال: <span class="gk">τῇ χώρᾳ</span> — الـ«يوتا» هنا صامتة تمامًا في النطق الكوينيّ الحديث للدرس، لكنها ضرورية في الكتابة والإعراب.</p>
+              <div class="en-tr" style="font-size:.85em">Example: τῇ χώρᾳ — the iota here is completely silent in this lesson's modern Koine pronunciation, but it's necessary in writing and grammatical analysis.</div>
+            </div>
+          </div>
+          <div class="info-box">
+            <span class="lbl">تبسيط سريع للحفظ</span>
+            احفظ القاعدة في ثلاث مجموعات بس: <span class="gk">η, ω</span> طولهم ثابت دايمًا، و<span class="gk">ε, ο</span> قِصَرهم ثابت دايمًا — دول مايحتاجوش حفظ لكل كلمة. أما <span class="gk">α, ι, υ</span> فهم «المشكوك فيهم»، طولهم بيتغيّر من كلمة لكلمة فلازم تتعلّمهم مع كل كلمة جديدة. وبالنسبة للثنائيات: لو شُفت حرفين صوتيين جنب بعض على السطر (زي <span class="gk">αι, ει, ου</span>) فده «ثنائي ظاهر» بينطق صوتًا واحدًا مسموعًا؛ ولو شُفت يوتا صغيرة تحت السطر (<span class="gk">ᾳ ῃ ῳ</span>) فده «ثنائي خفي» — سيبها من غير نطق خالص، وظيفتها إعرابية بس.
+            <div class="en-tr">Keep the rule to just three groups: η, ω are always long, and ε, ο are always short — no need to memorize those per word. α, ι, υ are the "doubtful" ones — their length changes word to word, so learn each one as it comes up. As for diphthongs: two vowel letters side by side on the line (like αι, ει, ου) is a "proper diphthong" pronounced as one heard sound; a small iota under the line (ᾳ ῃ ῳ) is an "improper diphthong" — don't pronounce it at all, its role is purely grammatical.</div>
+          </div>
+        </div>
+
+        <div class="section" id="l1-breathing">
+          <div class="subsection-title">ج. علامتا التنفّس (Breathing Marks)<div class="en-tr">C. Breathing Marks</div></div>
+          <p>
+            كل كلمة يونانية تبدأ بحرف علّة (أو بحرف <span class="gk">ρ</span>) تحمل فوق ذلك الحرف إحدى علامتين صغيرتين:
+          </p>
+          <div class="en-tr">Every Greek word that begins with a vowel (or with ρ) carries one of two small marks above that letter:</div>
+          <div class="grid-2">
+            <div class="col-box">
+              <h4>النَّفَس الناعم (Smooth Breathing) <span class="gk">᾿</span></h4>
+              <p>لا يُضيف أي صوت — الكلمة تبدأ بحرف العلّة مباشرة دون هاء.</p>
+              <div class="en-tr">Adds no sound — the word begins directly with the vowel, no 'h'.</div>
+            </div>
+            <div class="col-box">
+              <h4>النَّفَس الخشن (Rough Breathing) <span class="gk">῾</span></h4>
+              <p>يُضيف صوت «هـ» خفيفًا قبل حرف العلّة (كالـ h الإنجليزية).</p>
+              <div class="en-tr">Adds a light 'h' sound before the vowel (like the English h).</div>
+            </div>
+          </div>
+          <div class="verse-box">
+            <span class="gk">εὐαγγέλιον</span>
+            <span class="tr">euangelion</span>
+            <span class="mean">«بشارة / إنجيل» — نفَس ناعم على الـ ε، فتُنطق: إفانغيليون</span>
+            <div class="en-tr">"good news / gospel" — smooth breathing on the ε, so it's pronounced: euangelion</div>
+          </div>
+          <div class="verse-box">
+            <span class="gk">ἱστορία</span>
+            <span class="tr">historia</span>
+            <span class="mean">«تاريخ» — نفَس خشن على الـ ι، فتُنطق: هيستوريا</span>
+            <div class="en-tr">"history" — rough breathing on the ι, so it's pronounced: historia</div>
+          </div>
+          <div class="verse-box">
+            <span class="gk">ῥαψῳδία</span>
+            <span class="tr">rhapsōdia</span>
+            <span class="mean">«ملحمة منشَدة» — الـ ρ في أول الكلمة تحمل دائمًا نفَسًا خشنًا فتُنطق rh</span>
+            <div class="en-tr">"a chanted epic" — an initial ρ always carries rough breathing, so it's pronounced rh</div>
+          </div>
+          <div class="verse-box">
+            <span class="gk">ὑγίεια</span>
+            <span class="tr">hygieia</span>
+            <span class="mean">«صحة» — نفَس خشن على الـ υ في أول الكلمة، فتُنطق: هيغيا (ومنها كلمة hygiene الإنجليزية)</span>
+            <div class="en-tr">"health" — rough breathing on the initial υ, pronounced: hygieia (source of the English word 'hygiene')</div>
+          </div>
+          <div class="key-point">قاعدة عملية: كل <span class="gk">υ</span> و<span class="gk">ρ</span> في بداية الكلمة تحملان تلقائيًا نفَسًا خشنًا في القراءة الكلاسيكية.
+            <div class="en-tr">Practical rule: every word-initial υ and ρ automatically carries rough breathing in the classical reading.</div>
+          </div>
+          <div class="info-box">
+            <span class="lbl">تبسيط سريع للحفظ</span>
+            اختصرها في جملة واحدة: كل كلمة تبدأ بحرف علّة أو بـ<span class="gk">ρ</span> لازم تحمل علامة تنفّس فوقها — مفيش استثناء. العلامة المفتوحة لفوق (<span class="gk">᾿</span>) يعني «اقرأها عادي من غير هـ»، والعلامة المقفولة (<span class="gk">῾</span>) يعني «زوّد صوت هـ خفيف قبلها». ولو نسيت شكل العلامتين، افتكر بس القاعدة الذهبية اللي مالهاش استثناء: كل <span class="gk">υ</span> أو <span class="gk">ρ</span> في أول الكلمة نفَسها خشن أوتوماتيك.
+          </div>
+        </div>
+
+        <div class="section" id="l1-consonants">
+          <div class="subsection-title">د. تصنيف الحروف الساكنة (Consonants)<div class="en-tr">D. Classification of Consonants</div></div>
+          <p>تُصنَّف الحروف الساكنة اليونانية بحسب <b>مخرج النطق</b> وبحسب <b>درجة الجهر/الهمس</b>:</p>
+          <div class="en-tr">Greek consonants are classified by point of articulation and by voicing:</div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <tr><th>المخرج<span class="en-tr-inline"><br>Point of articulation</span></th><th>مهموسة Hard</th><th>مجهورة Soft</th><th>مطبقة (مبعثرة) Aspirated</th></tr>
+              <tr><td>حلقية Guttural</td><td class="gk">κ</td><td class="gk">γ</td><td class="gk">χ</td></tr>
+              <tr><td>شفوية Labial</td><td class="gk">π</td><td class="gk">β</td><td class="gk">φ</td></tr>
+              <tr><td>أسنانية Dental</td><td class="gk">τ</td><td class="gk">δ</td><td class="gk">θ</td></tr>
+            </table>
+          </div>
+          <div class="cards">
+            <div class="card"><div class="meaning"><b>الأنفية Nasal</b><br><span class="gk">μ, ν</span><div class="meaning-en">Nasal consonants: m, n</div></div></div>
+            <div class="card"><div class="meaning"><b>السائلة Liquid</b><br><span class="gk">λ, ρ</span><div class="meaning-en">Liquid consonants: l, r</div></div></div>
+            <div class="card"><div class="meaning"><b>الصفيرية Sibilant</b><br><span class="gk">σ (ς)</span><div class="meaning-en">Sibilant consonant: s</div></div></div>
+          </div>
+          <div class="info-box">
+            <span class="lbl">الحروف المزدوجة (Double Consonants)</span>
+            تنشأ من اجتماع حرف من مجموعة معيّنة مع <span class="gk">σ</span> فتندمج في حرف واحد:
+            <ul style="margin-right:20px; margin-top:8px">
+              <li>أسنانية + <span class="gk">σ</span> = <span class="gk">ζ</span></li>
+              <li>حلقية + <span class="gk">σ</span> = <span class="gk">ξ</span></li>
+              <li>شفوية + <span class="gk">σ</span> = <span class="gk">ψ</span></li>
+            </ul>
+            <div class="en-tr">These arise from a letter of a given group combining with σ and merging into one letter: dental + σ = ζ, guttural + σ = ξ, labial + σ = ψ.</div>
+          </div>
+          <div class="info-box">
+            <span class="lbl">تبسيط سريع للحفظ</span>
+            متحفظش الجدول بالعرض، احفظه بالعمق: كل عمود من الثلاثة (حلقية/شفوية/أسنانية) بيمثّل نفس مخرج النطق على ثلاث درجات فقط — مهموسة، مجهورة، مطبقة — يعني <span class="gk">κ-γ-χ</span> إخوات بعض، وكذلك <span class="gk">π-β-φ</span> و<span class="gk">τ-δ-θ</span>. وللحروف المزدوجة احفظها كمعادلة: (أسنانية + <span class="gk">σ</span> = <span class="gk">ζ</span>)، (حلقية + <span class="gk">σ</span> = <span class="gk">ξ</span>)، (شفوية + <span class="gk">σ</span> = <span class="gk">ψ</span>) — هتحتاجها بالظبط لما تيجي تصرّف الأفعال في زمن المستقبل في الدرس الجاي.
+            <div class="en-tr">Don't memorize the table by row, memorize it by depth: each of the three columns (guttural/labial/dental) represents the same point of articulation across just three degrees — hard, soft, aspirated — so κ-γ-χ are siblings, and so are π-β-φ and τ-δ-θ. For the double consonants, memorize them as an equation: (dental + σ = ζ), (guttural + σ = ξ), (labial + σ = ψ) — you'll need this exactly when you conjugate verbs in the future tense in the next lesson.</div>
+          </div>
+        </div>
+
+        <div class="section" id="l1-vocab">
+          <div class="subsection-title">هـ. المفردات (أسماء الأعلام والكلمات الشائعة)<div class="en-tr">E. Vocabulary (Proper Names and Common Words)</div></div>
+          <p>أسماء أعلام كنسية مألوفة، منطوقة بالتحويل الحرفي (Transliteration):</p>
+          <div class="en-tr">Familiar ecclesiastical proper names, given with their transliteration:</div>
+          <div class="cards">
+            <div class="card"><div class="gk-word">Ἰησοῦς</div><div class="translit">Iēsous</div><div class="meaning">يسوع<div class="meaning-en">Jesus</div></div></div>
+            <div class="card"><div class="gk-word">Χριστός</div><div class="translit">Christos</div><div class="meaning">المسيح<div class="meaning-en">Christ</div></div></div>
+            <div class="card"><div class="gk-word">Πέτρος</div><div class="translit">Petros</div><div class="meaning">بطرس<div class="meaning-en">Peter</div></div></div>
+            <div class="card"><div class="gk-word">Σίμων</div><div class="translit">Simōn</div><div class="meaning">سمعان<div class="meaning-en">Simon</div></div></div>
+            <div class="card"><div class="gk-word">Ἀνδρέας</div><div class="translit">Andreas</div><div class="meaning">أندراوس<div class="meaning-en">Andrew</div></div></div>
+            <div class="card"><div class="gk-word">Ἰάκωβος</div><div class="translit">Iacōbos</div><div class="meaning">يعقوب<div class="meaning-en">James</div></div></div>
+            <div class="card"><div class="gk-word">Φίλιππος</div><div class="translit">Philippos</div><div class="meaning">فيلبس<div class="meaning-en">Philip</div></div></div>
+            <div class="card"><div class="gk-word">Ἑλένη</div><div class="translit">Helenē</div><div class="meaning">هيلانة<div class="meaning-en">Helen</div></div></div>
+            <div class="card"><div class="gk-word">Βασίλειος</div><div class="translit">Basileios</div><div class="meaning">باسيليوس<div class="meaning-en">Basil</div></div></div>
+            <div class="card"><div class="gk-word">Στέφανος</div><div class="translit">Stephanos</div><div class="meaning">إسطفانوس<div class="meaning-en">Stephen</div></div></div>
+            <div class="card"><div class="gk-word">Ἡρῴδης</div><div class="translit">Hērōdēs</div><div class="meaning">هيرودس<div class="meaning-en">Herod</div></div></div>
+          </div>
+
+          <p style="margin-top:18px">كلمات شائعة مشتقة منها ألفاظ عربية/إنجليزية معروفة:</p>
+          <div class="cards">
+            <div class="card"><div class="gk-word">ἄγκυρα</div><div class="translit">ankyra</div><div class="meaning">مرساة (anchor)<div class="meaning-en">anchor</div></div></div>
+            <div class="card"><div class="gk-word">καί</div><div class="translit">kai</div><div class="meaning">و، أيضًا<div class="meaning-en">and, also</div></div></div>
+            <div class="card"><div class="gk-word">καρδία</div><div class="translit">kardia</div><div class="meaning">قلب<div class="meaning-en">heart</div></div></div>
+            <div class="card"><div class="gk-word">κόσμος</div><div class="translit">kosmos</div><div class="meaning">عالم، كون<div class="meaning-en">world, cosmos</div></div></div>
+            <div class="card"><div class="gk-word">λόγος</div><div class="translit">logos</div><div class="meaning">كلمة<div class="meaning-en">word, reason, logic, the Logos</div></div></div>
+            <div class="card"><div class="gk-word">πνεῦμα</div><div class="translit">pneuma</div><div class="meaning">روح، ريح، نفَس<div class="meaning-en">spirit, wind, breath</div></div></div>
+            <div class="card"><div class="gk-word">προφήτης</div><div class="translit">prophētēs</div><div class="meaning">نبي<div class="meaning-en">prophet</div></div></div>
+            <div class="card"><div class="gk-word">φωνή</div><div class="translit">phōnē</div><div class="meaning">صوت<div class="meaning-en">voice, sound</div></div></div>
+            <div class="card"><div class="gk-word">ἄγγελος</div><div class="translit">angelos</div><div class="meaning">ملاك، رسول<div class="meaning-en">messenger, angel</div></div></div>
+            <div class="card"><div class="gk-word">ἀμήν</div><div class="translit">amēn</div><div class="meaning">آمين<div class="meaning-en">amen</div></div></div>
+            <div class="card"><div class="gk-word">ἄνθρωπος</div><div class="translit">anthrōpos</div><div class="meaning">إنسان<div class="meaning-en">man, human being</div></div></div>
+            <div class="card"><div class="gk-word">ἀπόστολος</div><div class="translit">apostolos</div><div class="meaning">رسول<div class="meaning-en">apostle</div></div></div>
+            <div class="card"><div class="gk-word">γραφή</div><div class="translit">graphē</div><div class="meaning">كتابة، سِفر مقدّس<div class="meaning-en">writing, Scripture</div></div></div>
+            <div class="card"><div class="gk-word">δόξα</div><div class="translit">doxa</div><div class="meaning">مجد<div class="meaning-en">glory</div></div></div>
+            <div class="card"><div class="gk-word">ζωή</div><div class="translit">zōē</div><div class="meaning">حياة<div class="meaning-en">life</div></div></div>
+            <div class="card"><div class="gk-word">θεός</div><div class="translit">theos</div><div class="meaning">إله<div class="meaning-en">god</div></div></div>
+            <div class="card"><div class="gk-word">διάκονος</div><div class="translit">diakonos</div><div class="meaning">شماس<div class="meaning-en">deacon, servant</div></div></div>
+            <div class="card"><div class="gk-word">εἰκών</div><div class="translit">eikōn</div><div class="meaning">أيقونة<div class="meaning-en">icon, image</div></div></div>
+            <div class="card"><div class="gk-word">θεραπεία</div><div class="translit">therapeia</div><div class="meaning">علاج، خدمة<div class="meaning-en">healing, service, therapy</div></div></div>
+            <div class="card"><div class="gk-word">ἐπιστολή</div><div class="translit">epistolē</div><div class="meaning">رسالة<div class="meaning-en">letter, epistle</div></div></div>
+            <div class="card"><div class="gk-word">θρόνος</div><div class="translit">thronos</div><div class="meaning">عرش<div class="meaning-en">throne</div></div></div>
+            <div class="card"><div class="gk-word">μάρτυς</div><div class="translit">martys</div><div class="meaning">شهيد<div class="meaning-en">witness, martyr</div></div></div>
+          </div>
+          <p class="small-note" style="margin-top:10px">
+            ملحوظة منهجية: النص الأصلي المرفوع كان مستخرَجًا من ملف PDF بترميز خط رمزي قديم أدّى إلى تشوّه صور بعض الحروف اليونانية (مثل ظهور <span class="gk">Γ</span> بدل <span class="gk">Δ</span>، أو <span class="gk">δ</span> بدل <span class="gk">ε</span> في جدول الأبجدية). تم هنا تصحيح كل كلمة اعتمادًا على التحويل الحرفي (Transliteration) والمعنى الإنجليزي المرفقين في الأصل، فالكلمات أعلاه هي الصورة الصحيحة لليونانية الكوينية.
+          </p>
+          <div class="en-tr" style="font-size:.85em">Methodological note: the original uploaded text was extracted from a PDF with an old symbol-font encoding that distorted some Greek letterforms (e.g. Γ appearing instead of Δ, or δ instead of ε in the alphabet table). Every word here has been corrected based on the transliteration and English meaning attached in the original, so the words above are the accurate Koine Greek forms.</div>
+        </div>
+
+        <div class="section" id="l1-exercise">
+          <div class="subsection-title">و. التمرين الأول — مشروح بالكامل<div class="en-tr">F. Exercise One — Fully Explained</div></div>
+
+          <div class="exercise-block">
+            <h4>1) اقرأ الكلمات التالية بصوت مرتفع (تدريب نطق)<div class="en-tr" style="font-size:.8em">Read the following words aloud (pronunciation drill)</div></h4>
+            <p class="gk" style="font-size:1.15rem; line-height:2.2">
+              πατήρ · ἀδελφή · καλός · σοφός · πνεῦμα · ΚΥΚΛΟΣ · ΝΕΙΛΟΣ · μήτηρ · ὥρα ·
+              αἰνέω · κακή · βιβλίον · Θεοτόκος · ΨΥΧΗ · ΕΚΚΛΗΣΙΑ · ἄγγελος · οἶκος · ἤγαγον ·
+              ῥίζα · ἁμαρτία · ἀριθμός · λέγομεν · μετά · βήματος · κάμηλον · ἄλλα · ἀλλά ·
+              γένος · γυνή · νύξ · ξύλον · τόξον · γάζα · ζυγός · θύω · φωτίζω · βλασφημία ·
+              τυφλός · ψιλός · ψαλμός · δουλεία · κυρία
+            </p>
+            <div class="qa">
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار المعاني والشرح</button>
+              <div class="answer">
+                <div class="why">
+                  هذا تمرين نطق لا ترجمة، لكن إليك المعاني ليتّضح السياق أثناء القراءة:
+                  <span class="gk">πατήρ</span> أب، <span class="gk">ἀδελφή</span> أخت، <span class="gk">καλός</span> حسن/جميل،
+                  <span class="gk">σοφός</span> حكيم، <span class="gk">πνεῦμα</span> روح، <span class="gk">κύκλος</span> دائرة،
+                  <span class="gk">Νεῖλος</span> النيل، <span class="gk">μήτηρ</span> أم، <span class="gk">ὥρα</span> ساعة،
+                  <span class="gk">αἰνέω</span> أُسبّح، <span class="gk">κακή</span> رديئة (مؤنث)، <span class="gk">βιβλίον</span> كتاب،
+                  <span class="gk">Θεοτόκος</span> والدة الإله، <span class="gk">ψυχή</span> نفس، <span class="gk">ἐκκλησία</span> كنيسة،
+                  <span class="gk">ἄγγελος</span> ملاك، <span class="gk">οἶκος</span> بيت، <span class="gk">ἤγαγον</span> قدتُ (ماضٍ تام)،
+                  <span class="gk">ῥίζα</span> جذر، <span class="gk">ἁμαρτία</span> خطية، <span class="gk">ἀριθμός</span> عدد،
+                  <span class="gk">λέγομεν</span> نقول، <span class="gk">μετά</span> مع/بعد، <span class="gk">βήματος</span> (مضاف) المنبر،
+                  <span class="gk">κάμηλον</span> جمل، <span class="gk">ἄλλα</span> أشياء أخرى، <span class="gk">ἀλλά</span> لكنّ،
+                  <span class="gk">γένος</span> جنس/نسل، <span class="gk">γυνή</span> امرأة، <span class="gk">νύξ</span> ليل،
+                  <span class="gk">ξύλον</span> خشب، <span class="gk">τόξον</span> قوس، <span class="gk">γάζα</span> كنز،
+                  <span class="gk">ζυγός</span> نير، <span class="gk">θύω</span> أذبح، <span class="gk">φωτίζω</span> أنير،
+                  <span class="gk">βλασφημία</span> تجديف، <span class="gk">τυφλός</span> أعمى، <span class="gk">ψιλός</span> عارٍ/بسيط،
+                  <span class="gk">ψαλμός</span> مزمور، <span class="gk">δουλεία</span> عبودية، <span class="gk">κυρία</span> سيدة.
+                  <br><br>
+                  <b>هدف التمرين:</b> تدريب العين والفم على مجموعات حروف متكرّرة الحدوث: <span class="gk">-εια</span>، <span class="gk">-ος</span>،
+                  <span class="gk">γ+ν</span>، الحروف الكبيرة (Uncial)، والفرق بين <span class="gk">υ</span> المفردة و<span class="gk">υ</span> ضمن ثنائية مثل <span class="gk">ευ/αυ</span>.
+                  <div class="en-tr">This is a pronunciation drill, not a translation exercise, but here are the meanings for context while reading: πατήρ father, ἀδελφή sister, καλός good/beautiful, σοφός wise, πνεῦμα spirit, κύκλος circle, Νεῖλος the Nile, μήτηρ mother, ὥρα hour, αἰνέω I praise, κακή bad (feminine), βιβλίον book, Θεοτόκος Mother of God, ψυχή soul, ἐκκλησία church, ἄγγελος angel, οἶκος house, ἤγαγον I led (aorist), ῥίζα root, ἁμαρτία sin, ἀριθμός number, λέγομεν we say, μετά with/after, βήματος (genitive) of the tribunal/pulpit, κάμηλον camel, ἄλλα other things, ἀλλά but, γένος race/kind, γυνή woman, νύξ night, ξύλον wood, τόξον bow, γάζα treasure, ζυγός yoke, θύω I sacrifice, φωτίζω I illuminate, βλασφημία blasphemy, τυφλός blind, ψιλός bare/simple, ψαλμός psalm, δουλεία slavery, κυρία lady.
+                  <br><br>
+                  <b>Purpose of the exercise:</b> to train the eye and mouth on frequently-occurring letter clusters: -εια, -ος, γ+ν, the uncial capital letters, and the difference between a standalone υ and a υ within a diphthong like ευ/αυ.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="exercise-block">
+            <h4>2) أعطِ التحويل الحرفي الصحيح (Transliteration) للكلمات التالية<div class="en-tr" style="font-size:.8em">Give the correct transliteration of the following words</div></h4>
+            <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext"><span class="gk">ψυχή</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">psychē</div><div class="why">حرفا <span class="gk">ψ</span>=ps و<span class="gk">η</span>=ē الطويلة في آخر الكلمة، وتعني «نفس/روح».<div class="en-tr" style="margin-top:4px">The letters ψ=ps and the long η=ē at the end of the word; it means "soul/spirit."</div></div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">2</span><span class="qtext"><span class="gk">πρεσβύτης</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">presbytēs</div><div class="why">تعني «شيخ/كاهن» (ومنها presbyter/قسيس)؛ لاحظ <span class="gk">υ</span>=y و<span class="gk">-ης</span> نهاية اسم مذكر من الصرف الأول.<div class="en-tr" style="margin-top:4px">It means "elder/priest" (source of "presbyter"); note υ=y and the -ης ending of a masculine first-declension noun.</div></div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">3</span><span class="qtext"><span class="gk">φαντασία</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">phantasia</div><div class="why"><span class="gk">φ</span>=ph دائمًا، ومنها الكلمة الإنجليزية fantasy.<div class="en-tr" style="margin-top:4px">φ=ph always; source of the English word "fantasy."</div></div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">4</span><span class="qtext"><span class="gk">φιλοσοφία</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">philosophia</div><div class="why">كلمة مركّبة: <span class="gk">φιλο-</span> (محبّ) + <span class="gk">σοφία</span> (حكمة) = «محبة الحكمة».<div class="en-tr" style="margin-top:4px">A compound word: φιλο- (loving) + σοφία (wisdom) = "love of wisdom."</div></div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">5</span><span class="qtext"><span class="gk">πατήρ</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">patēr</div><div class="why">أب؛ لاحظ التشابه الجذري مع اللاتينية pater والإنجليزية father.<div class="en-tr" style="margin-top:4px">Father; note the root similarity with Latin "pater" and English "father."</div></div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">6</span><span class="qtext"><span class="gk">πόλις</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">polis</div><div class="why">«مدينة» (ومنها metropolis)، وهي اسم من الصرف الثالث سندرسه لاحقًا.<div class="en-tr" style="margin-top:4px">"City" (source of "metropolis"); it's a third-declension noun we'll study later.</div></div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">7</span><span class="qtext"><span class="gk">εὕρηκα</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">heurēka</div><div class="why">صيغة ماضٍ تام «وجدتُ!» — نفَس خشن على الثنائية <span class="gk">ευ</span> فتُنطق heu، ومنها الكلمة الشهيرة Eureka.<div class="en-tr" style="margin-top:4px">A perfect-tense form meaning "I have found (it)!" — rough breathing on the diphthong ευ makes it "heu," source of the famous word "Eureka."</div></div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">8</span><span class="qtext"><span class="gk">υἱός</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">huios</div><div class="why">«ابن» — نفَس خشن على <span class="gk">υ</span> الأولى.<div class="en-tr" style="margin-top:4px">"Son" — rough breathing on the initial υ.</div></div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">9</span><span class="qtext"><span class="gk">εὐλογία</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">eulogia</div><div class="why">«بركة» (حرفيًا «كلام حسن») ومنها الإنجليزية eulogy.<div class="en-tr" style="margin-top:4px">"Blessing" (literally "good speech"), source of the English "eulogy."</div></div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">10</span><span class="qtext"><span class="gk">αὐτός</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">autos</div><div class="why">ضمير «هو / نفسه» — ثنائية <span class="gk">αυ</span>=au.<div class="en-tr" style="margin-top:4px">Pronoun "he / himself" — the diphthong αυ=au.</div></div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">11</span><span class="qtext"><span class="gk">αἰών</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">aiōn</div><div class="why">«دهر/عصر» ومنها aeon الإنجليزية.<div class="en-tr" style="margin-top:4px">"Age/eon," source of the English "aeon."</div></div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">12</span><span class="qtext"><span class="gk">Νικόλαος</span>، <span class="gk">Γεώργιος</span>، <span class="gk">Ἰωάννης</span>، <span class="gk">Αἰκατερίνη</span>، <span class="gk">Εἰρήνη</span>، <span class="gk">Χρυσόστομος</span>، <span class="gk">Μιχαήλ</span>، <span class="gk">Δέσποινα</span>، <span class="gk">Ματθίας</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer">
+                <div class="ans-line">Nikolaos · Geōrgios · Iōannēs · Aikaterinē · Eirēnē · Chrysostomos · Michaēl · Despoina · Matthias</div>
+                <div class="why">أسماء أعلام كنسية: نيقولا، جاورجيوس، يوحنا، أيكاترينا، إيريني (السلام)، ذهبي الفم، ميخائيل، دسبينا (سيدتي)، متياس.<div class="en-tr" style="margin-top:4px">Ecclesiastical proper names: Nicholas, George, John, Catherine, Irene ("peace"), Chrysostom ("golden-mouthed"), Michael, Despoina ("my lady"), Matthias.</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CHAPTER 2 : VERBS ================= -->
+      <section class="chapter ch-2">
+        <div class="chapter-head">
+          <div class="chapter-num">Β</div>
+          <h2>الدرس الثاني — الأفعال (Τα Ρήματα)<div class="en-tr" style="font-size:.55em; margin-top:4px">Lesson Two — Verbs</div></h2>
+        </div>
+        <p class="chapter-sub">تصريف الفعل النموذجي <span class="gk">λύω</span> في المضارع والمستقبل والماضي الناقص، والنفي، والمصدر.<div class="en-tr">Conjugation of the model verb λύω in the present, future, and imperfect tenses, negation, and the infinitive.</div></p>
+
+        <div class="section" id="l2-conjugation">
+          <div class="subsection-title">أ. تصريف الفعل النموذجي <span class="gk">λύω</span> (أَحُلّ / أَفُكّ)<div class="en-tr">A. Conjugation of the Model Verb λύω (I loose / I untie)</div></div>
+          <p>الفعل اليوناني يحمل في نهايته معلومات الفاعل (الشخص والعدد)، لذلك لا حاجة غالبًا لضمير منفصل. لاحظ الجذر <span class="gk">λυ-</span> الثابت وتغيّر اللاحقة بحسب الزمن والشخص.</p>
+          <div class="en-tr">The Greek verb carries the subject's information (person and number) in its ending, so a separate pronoun usually isn't needed. Note the fixed root λυ- and how the ending changes with tense and person.</div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <tr><th>الضمير<span class="en-tr-inline"><br>Pronoun</span></th><th>الحاضر Present</th><th>المستقبل Future</th><th>الماضي الناقص Imperfect</th></tr>
+              <tr><td>أنا<span class="en-tr-inline"><br>I</span></td><td class="gk">λύω</td><td class="gk">λύσω</td><td class="gk">ἔλυον</td></tr>
+              <tr><td>أنتَ<span class="en-tr-inline"><br>you (sg.)</span></td><td class="gk">λύεις</td><td class="gk">λύσεις</td><td class="gk">ἔλυες</td></tr>
+              <tr><td>هو/هي<span class="en-tr-inline"><br>he/she</span></td><td class="gk">λύει</td><td class="gk">λύσει</td><td class="gk">ἔλυε(ν)</td></tr>
+              <tr><td>نحن<span class="en-tr-inline"><br>we</span></td><td class="gk">λύομεν</td><td class="gk">λύσομεν</td><td class="gk">ἐλύομεν</td></tr>
+              <tr><td>أنتم<span class="en-tr-inline"><br>you (pl.)</span></td><td class="gk">λύετε</td><td class="gk">λύσετε</td><td class="gk">ἐλύετε</td></tr>
+              <tr><td>هم<span class="en-tr-inline"><br>they</span></td><td class="gk">λύουσι(ν)</td><td class="gk">λύσουσι(ν)</td><td class="gk">ἔλυον</td></tr>
+              <tr><td>المصدر Infinitive</td><td class="gk">λύειν</td><td class="gk">λύσειν</td><td>—</td></tr>
+            </table>
+          </div>
+          <div class="key-point">
+            علامة زمن المستقبل: زيادة السين <span class="gk">-σ-</span> بعد الجذر (<span class="gk">λύ<b>σ</b>ω</span>).
+            علامة الماضي الناقص: «الزيادة» <span class="gk">ἐ-</span> في أول الفعل (augment) مع لواحق مختلفة عن الحاضر (<span class="gk"><b>ἔ</b>λυον</span>).
+            <div class="en-tr">Future-tense marker: adding -σ- after the root (λύσω). Imperfect-tense marker: the "augment" ἐ- at the start of the verb, with endings different from the present (ἔλυον).</div>
+          </div>
+          <div class="info-box">
+            <span class="lbl">تبسيط سريع للحفظ</span>
+            فكِّر في الفعل اليوناني كأنه ثلاث قطع دائمًا: <b>(الزيادة إن وُجدت) + الجذر الثابت + اللاحقة</b>. الجذر <span class="gk">λυ-</span> لا يتغيّر أبدًا بين الأزمنة الثلاثة، فكل ما عليك حفظه فعليًّا هو: «هل أضفت <span class="gk">σ</span>؟» (فهذا مستقبل)، أو «هل أضفت <span class="gk">ἐ</span> في البداية وغيّرت اللاحقة؟» (فهذا ماضٍ ناقص). لا داعي لحفظ الجدول كله كوحدة واحدة — احفظ القاعدة الثلاثية وطبّقها.
+            <div class="en-tr">Think of the Greek verb as always three pieces: (the augment, if present) + the fixed root + the ending. The root λυ- never changes across the three tenses, so all you really need to memorize is: "did I add σ?" (that's future), or "did I add ἐ at the start and change the ending?" (that's imperfect). No need to memorize the whole table as one block — memorize the three-part rule and apply it.</div>
+          </div>
+        </div>
+
+        <div class="section" id="l2-negation">
+          <div class="subsection-title">ب. أدوات النفي والمصدر<div class="en-tr">B. Negation Particles and the Infinitive</div></div>
+          <p>
+            لليونانية أداتا نفي رئيسيتان: <b><span class="gk">οὐ</span></b> تُستخدم مع الفعل في صيغة الخبر (Indicative)،
+            و<b><span class="gk">μή</span></b> تُستخدم مع المصدر (Infinitive) وصيغ الأمر والشرط وغير الخبرية.
+            و<span class="gk">οὐ</span> تتحوّل صوتيًّا حسب الحرف التالي: <span class="gk">οὐ</span> قبل ساكن، <span class="gk">οὐκ</span> قبل حرف علّة بنفَس ناعم، <span class="gk">οὐχ</span> قبل حرف علّة بنفَس خشن.
+          </p>
+          <div class="en-tr">Greek has two main negation particles: οὐ, used with a verb in the indicative mood, and μή, used with the infinitive and imperative, conditional, and other non-indicative moods. οὐ shifts sound depending on the following letter: οὐ before a consonant, οὐκ before a vowel with smooth breathing, οὐχ before a vowel with rough breathing.</div>
+          <div class="verse-box">
+            <span class="gk">οὐ γὰρ λέξω</span><span class="tr"> — ou gar lexō</span>
+            <span class="mean">«فإني لن أتكلّم» — <span class="gk">οὐ</span> + فعل مضارع/مستقبل خبري (<span class="gk">λέξω</span> مستقبل λέγω)</span>
+          </div>
+          <div class="verse-box">
+            <span class="gk">οὐκ οὖν ἔχεις</span><span class="tr"> — ouk oun echeis</span>
+            <span class="mean">«إذًا ليس عندك» — <span class="gk">οὐ</span> أصبحت <span class="gk">οὐκ</span> لأن الكلمة التالية تبدأ بحرف علّة بنفَس ناعم</span>
+          </div>
+          <div class="verse-box">
+            <span class="gk">οὐχ ἱππεύομεν</span><span class="tr"> — ouch hippeuomen</span>
+            <span class="mean">«لا نمتطي (لا نركب الخيل)» — أصبحت <span class="gk">οὐχ</span> لأن <span class="gk">ἱππεύομεν</span> تبدأ بنفَس خشن</span>
+          </div>
+          <div class="verse-box">
+            <span class="gk">μὴ εὖ θεραπεύειν</span><span class="tr"> — mē eu therapeuein</span>
+            <span class="mean">«أن لا نخدم/نعالج جيّدًا» — <span class="gk">μή</span> لأن النفي هنا يقع على المصدر <span class="gk">θεραπεύειν</span></span>
+          </div>
+          <p>أمّا المصدر (Infinitive) فيُستخدم بعد أفعال الإرادة والرغبة مثل <span class="gk">θέλω</span> (أريد) و<span class="gk">κελεύω</span> (آمر):</p>
+          <div class="verse-box">
+            <span class="gk">θέλουσι νῦν χορεύειν</span>
+            <span class="tr">thelousi nyn choreuein</span>
+            <span class="mean">«يريدون أن يرقصوا الآن»</span>
+          </div>
+          <div class="info-box">
+            <span class="lbl">تبسيط سريع للحفظ</span>
+            اسأل نفسك سؤالًا واحدًا فقط: «هل الفعل في صيغة الخبر (يخبر عن حقيقة/حدث) أم لا؟» — لو الإجابة نعم، استخدم <span class="gk">οὐ</span>. لو الفعل مصدر، أو أمر، أو بعد <span class="gk">ἵνα/ἐάν</span>، استخدم <span class="gk">μή</span>. باقي القاعدة (تحوّل <span class="gk">οὐ</span> إلى <span class="gk">οὐκ</span> أو <span class="gk">οὐχ</span>) مجرّد تسهيل نطقي، مثل تحوّل «أل» التعريف عند اللسان العربي.
+          </div>
+        </div>
+
+        <div class="section" id="l2-vocab">
+          <div class="subsection-title">ج. المفردات (الأفعال والأدوات)</div>
+          <div class="cards">
+            <div class="card"><div class="gk-word">λύω</div><div class="translit">lyō</div><div class="meaning">أحُلّ، أفُكّ<div class="meaning-en">I loose, I untie</div></div></div>
+            <div class="card"><div class="gk-word">ἁγιάζω</div><div class="translit">hagiazō</div><div class="meaning">أقدِّس<div class="meaning-en">I sanctify</div></div></div>
+            <div class="card"><div class="gk-word">χορεύω</div><div class="translit">choreuō</div><div class="meaning">أرقص<div class="meaning-en">I dance</div></div></div>
+            <div class="card"><div class="gk-word">ἱππεύω</div><div class="translit">hippeuō</div><div class="meaning">أركب (الخيل)<div class="meaning-en">I ride (a horse)</div></div></div>
+            <div class="card"><div class="gk-word">ἄγω</div><div class="translit">agō</div><div class="meaning">أقود<div class="meaning-en">I lead</div></div></div>
+            <div class="card"><div class="gk-word">βλέπω</div><div class="translit">blepō</div><div class="meaning">أنظر، أرى<div class="meaning-en">I see, I look</div></div></div>
+            <div class="card"><div class="gk-word">γράφω</div><div class="translit">graphō</div><div class="meaning">أكتب<div class="meaning-en">I write</div></div></div>
+            <div class="card"><div class="gk-word">δοξάζω</div><div class="translit">doxazō</div><div class="meaning">أمجِّد<div class="meaning-en">I glorify</div></div></div>
+            <div class="card"><div class="gk-word">θέλω</div><div class="translit">thelō</div><div class="meaning">أريد<div class="meaning-en">I want, I wish</div></div></div>
+            <div class="card"><div class="gk-word">θεραπεύω</div><div class="translit">therapeuō</div><div class="meaning">أعالج، أخدم/أعبد<div class="meaning-en">I heal, I serve/worship</div></div></div>
+            <div class="card"><div class="gk-word">λαμβάνω</div><div class="translit">lambanō</div><div class="meaning">آخذ<div class="meaning-en">I take, I receive</div></div></div>
+            <div class="card"><div class="gk-word">λέγω</div><div class="translit">legō</div><div class="meaning">أقول<div class="meaning-en">I say, I speak</div></div></div>
+            <div class="card"><div class="gk-word">μένω</div><div class="translit">menō</div><div class="meaning">أبقى، أثبُت<div class="meaning-en">I remain, I stay</div></div></div>
+            <div class="card"><div class="gk-word">νηστεύω</div><div class="translit">nēsteuō</div><div class="meaning">أصوم<div class="meaning-en">I fast</div></div></div>
+            <div class="card"><div class="gk-word">πέμπω</div><div class="translit">pempō</div><div class="meaning">أُرسل<div class="meaning-en">I send</div></div></div>
+            <div class="card"><div class="gk-word">πίνω</div><div class="translit">pinō</div><div class="meaning">أشرب<div class="meaning-en">I drink</div></div></div>
+            <div class="card"><div class="gk-word">πιστεύω</div><div class="translit">pisteuō</div><div class="meaning">أؤمن<div class="meaning-en">I believe</div></div></div>
+            <div class="card"><div class="gk-word">σῴζω</div><div class="translit">sōzō</div><div class="meaning">أخلِّص<div class="meaning-en">I save</div></div></div>
+            <div class="card"><div class="gk-word">ἔχω</div><div class="translit">echō</div><div class="meaning">عندي، أملك<div class="meaning-en">I have</div></div></div>
+            <div class="card"><div class="gk-word">ἀγγέλλω</div><div class="translit">angellō</div><div class="meaning">أُبشِّر، أُخبر<div class="meaning-en">I announce, I bring news</div></div></div>
+            <div class="card"><div class="gk-word">διδάσκω</div><div class="translit">didaskō</div><div class="meaning">أُعلِّم<div class="meaning-en">I teach</div></div></div>
+            <div class="card"><div class="gk-word">τρέχω</div><div class="translit">trechō</div><div class="meaning">أجري<div class="meaning-en">I run</div></div></div>
+            <div class="card"><div class="gk-word">οὖν</div><div class="translit">oun</div><div class="meaning">إذًا<div class="meaning-en">therefore, then</div></div></div>
+            <div class="card"><div class="gk-word">γάρ</div><div class="translit">gar</div><div class="meaning">لأن، فإنّ<div class="meaning-en">for, because</div></div></div>
+            <div class="card"><div class="gk-word">εὖ</div><div class="translit">eu</div><div class="meaning">حسنًا، جيّدًا<div class="meaning-en">well, good</div></div></div>
+            <div class="card"><div class="gk-word">νῦν</div><div class="translit">nyn</div><div class="meaning">الآن<div class="meaning-en">now</div></div></div>
+            <div class="card"><div class="gk-word">ἀεί</div><div class="translit">aei</div><div class="meaning">دائمًا<div class="meaning-en">always</div></div></div>
+            <div class="card"><div class="gk-word">οὐδέν</div><div class="translit">ouden</div><div class="meaning">لا شيء<div class="meaning-en">nothing</div></div></div>
+            <div class="card"><div class="gk-word">ἀλλά</div><div class="translit">alla</div><div class="meaning">لكنّ<div class="meaning-en">but</div></div></div>
+            <div class="card"><div class="gk-word">καὶ...καὶ</div><div class="translit">kai...kai</div><div class="meaning">... و... معًا<div class="meaning-en">both...and</div></div></div>
+          </div>
+        </div>
+
+        <div class="section" id="l2-exercise">
+          <div class="subsection-title">د. التمرين الثاني — مشروح بالكامل</div>
+
+          <div class="exercise-block">
+            <h4>أكمل الفراغ</h4>
+            <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext"><span class="gk">ἔγραφε</span> = هو كان ..... يكتب.</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">هو كان (بصدد) الكتابة — ماضٍ ناقص مستمر</div><div class="ans-line-en">He was (in the process of) writing — continuous imperfect.</div><div class="why"><span class="gk">ἔγραφε</span> صيغة الماضي الناقص (Imperfect) للغائب المفرد من <span class="gk">γράφω</span>، وتدل على فعل مستمر/متكرر في الماضي، أي «كان يكتب» لا «كتب» دفعة واحدة.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">2</span><span class="qtext">ضع أداة النفي: ..... <span class="gk">ἱππεύει</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line"><span class="gk">οὐχ ἱππεύει</span></div><div class="why"><span class="gk">ἱππεύει</span> تبدأ بنفَس خشن (الـ ἱ محمولة بعلامة النفس الخشن)، فتصبح <span class="gk">οὐ</span> ← <span class="gk">οὐχ</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">3</span><span class="qtext"><span class="gk">τρέχειν</span> = أن ..... يجري.</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">أن يجري (مصدر)</div><div class="ans-line-en">to run (infinitive)</div><div class="why">اللاحقة <span class="gk">-ειν</span> هي علامة المصدر (Infinitive) في زمن المضارع.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">4</span><span class="qtext"><span class="gk">ἐπέμπομεν</span> في المستقبل هي .....</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line"><span class="gk">πέμψομεν</span></div><div class="why">حذف زيادة الماضي <span class="gk">ἐ-</span>، ثم إضافة سين المستقبل إلى الجذر <span class="gk">πεμπ-</span>؛ ولأن الجذر ينتهي بحرف شفوي <span class="gk">π</span>، فإن <span class="gk">π+σ</span> تندمج صوتيًا لتصبح <span class="gk">ψ</span> (شفوية+σ=ψ، كما مرّ في تصنيف الحروف الساكنة)، فينتج <span class="gk">πέμψομεν</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">5</span><span class="qtext"><span class="gk">ἐδιδάσκομεν</span> = كنا ..... التعليم</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line">كنا (نُداوم على) التعليم</div><div class="ans-line-en">We were (continually) teaching.</div><div class="why">ماضٍ ناقص جمع متكلم من <span class="gk">διδάσκω</span>، يفيد الاستمرار: «كنا نعلِّم» باستمرار وليس مرة واحدة.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">6</span><span class="qtext"><span class="gk">λέξουσιν</span> في الحاضر هي .....</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line"><span class="gk">λέγουσι(ν)</span></div><div class="why"><span class="gk">λέξουσιν</span> مستقبل <span class="gk">λέγω</span> (والسين اندمجت مع الحرف الحلقي <span class="gk">γ</span> لتعطي <span class="gk">ξ</span>: حلقية+σ=ξ)؛ الحاضر المقابل يعود للجذر الأصلي <span class="gk">λεγ-</span> بلاحقة الحاضر <span class="gk">-ουσι(ν)</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">7</span><span class="qtext">المفرد من <span class="gk">ἔχετε</span> هو .....</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line"><span class="gk">ἔχεις</span></div><div class="why">من جمع المخاطب (أنتم) إلى مفرد المخاطب (أنتَ): اللاحقة <span class="gk">-ετε</span> ← <span class="gk">-εις</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">8</span><span class="qtext">الجمع من <span class="gk">βλέπεις</span> هو .....</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line"><span class="gk">βλέπετε</span></div><div class="why">من مفرد المخاطب إلى جمع المخاطب: اللاحقة <span class="gk">-εις</span> ← <span class="gk">-ετε</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">9</span><span class="qtext">ضع أداة النفي: ..... <span class="gk">ἁγιάζειν</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line"><span class="gk">μὴ ἁγιάζειν</span></div><div class="why">لأن النفي هنا على مصدر (Infinitive)، فالأداة المناسبة هي <span class="gk">μή</span> لا <span class="gk">οὐ</span>.</div></div>
+            </div>
+          </div>
+
+          <div class="exercise-block">
+            <h4>ترجِم وأعرِب الأفعال</h4>
+            <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext"><span class="gk">ἀμήν, πιστεύομεν καὶ δοξάζομεν.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">آمين، نحن نؤمن ونمجِّد.</div><div class="ans-line-en">Amen, we believe and we glorify.</div><div class="why"><span class="gk">πιστεύομεν</span>: فعل مضارع خبري، جمع متكلم، مبني للمعلوم، من <span class="gk">πιστεύω</span>. <span class="gk">δοξάζομεν</span>: نفس الصيغة من <span class="gk">δοξάζω</span>. العطف بـ<span class="gk">καί</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">2</span><span class="qtext"><span class="gk">νῦν γὰρ εὖ γράψω.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">فإني الآن سأكتب حسنًا.</div><div class="ans-line-en">For I will now write well.</div><div class="why"><span class="gk">γράψω</span>: فعل مستقبل خبري، مفرد متكلم، من <span class="gk">γράφω</span> (γ+σ اندمجتا صوتيًا في الكتابة التقليدية لتظهرا ψ لاحقًا وليس هنا لأن الجذر ينتهي بـφ لا γ — الصواب: φ+σ لا تندمج بل تُكتب ψ فعليًا: γράφω←γράψω يوضح شفوية مطبقة φ + σ = ψ).</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">3</span><span class="qtext"><span class="gk">οὐκ ἔχω οὐδέν.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">ليس عندي شيء.</div><div class="ans-line-en">I have nothing.</div><div class="why"><span class="gk">ἔχω</span>: مضارع خبري مفرد متكلم من <span class="gk">ἔχω</span>. النفي المزدوج <span class="gk">οὐκ...οὐδέν</span> في اليونانية يؤكّد النفي بدل أن يبطله (بخلاف بعض قواعد المنطق الحديث)، فمعناه «لا شيء إطلاقًا».</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">4</span><span class="qtext"><span class="gk">οὐδὲν οὐκ ἔχω.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">لا شيء البتّة ليس عندي (= ليس عندي أي شيء إطلاقًا).</div><div class="ans-line-en">I have absolutely nothing (double negative used for emphasis).</div><div class="why">نفس بنية الجملة السابقة بترتيب مقلوب للتوكيد الأشد؛ اليونانية الكوينية تتحمّل تكرار أداة النفي لغرض التشديد لا للإلغاء المتبادل.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">5</span><span class="qtext"><span class="gk">εὑρίσκεις καὶ λαμβάνεις.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">أنت تجد وتأخذ.</div><div class="ans-line-en">You find and you take.</div><div class="why">فعلان مضارعان خبريّان، مفرد المخاطب، من <span class="gk">εὑρίσκω</span> و<span class="gk">λαμβάνω</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">6</span><span class="qtext"><span class="gk">ἄγει γὰρ καὶ σῴζει.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">فإنه يقود ويخلِّص.</div><div class="ans-line-en">For he leads and saves.</div><div class="why">فعلان مضارعان خبريّان، الغائب المفرد، من <span class="gk">ἄγω</span> و<span class="gk">σῴζω</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">7</span><span class="qtext"><span class="gk">ἔγραφε ἀλλ' οὐκ ἔπεμπε οὐδέν.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">كان يكتب لكنه لم يكن يرسل شيئًا.</div><div class="ans-line-en">He was writing, but he was not sending anything.</div><div class="why">فعلان في الماضي الناقص، الغائب المفرد، من <span class="gk">γράφω</span> و<span class="gk">πέμπω</span>، يفيدان استمرارية الفعل (أو عدمه) في الماضي.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">8</span><span class="qtext"><span class="gk">καὶ νῦν καὶ ἀεί.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">الآن وكل أوان (كما في التسبحة الكنسية: «الآن وكل أوان وإلى دهر الدهور»).</div><div class="ans-line-en">Now and ever (as in the church doxology: “now and ever and unto the ages of ages”).</div><div class="why">تركيب <span class="gk">καὶ...καὶ</span> «كلٌّ من... و...»، بلا فعل (جملة اسمية/ظرفية حذف فعلها لشهرة العبارة الليتورجية).</div></div>
+            </div>
+          </div>
+
+          <div class="exercise-block">
+            <h4>ترجِم إلى اليونانية</h4>
+            <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext">أنتم تريدون أن تصوموا لكنكم تشربون.</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">θέλετε νηστεύειν ἀλλὰ πίνετε.</div><div class="why"><span class="gk">θέλετε</span> (جمع مخاطب) + مصدر <span class="gk">νηστεύειν</span>، ثم <span class="gk">ἀλλά</span> وفعل مضارع <span class="gk">πίνετε</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">2</span><span class="qtext">هم سيرون كل شيء لكنهم لن يقولوا شيئًا.</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">βλέψουσι πάντα ἀλλ' οὐδὲν λέξουσιν.</div><div class="why">مستقبل جمع غائب من <span class="gk">βλέπω</span> ثم من <span class="gk">λέγω</span> منفيًّا بـ<span class="gk">οὐδέν</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">3</span><span class="qtext">هو يخلِّص ونحن سنعبد (نخدم).</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">σῴζει καὶ θεραπεύσομεν.</div><div class="why">مضارع غائب مفرد <span class="gk">σῴζει</span>، ثم مستقبل جمع متكلم <span class="gk">θεραπεύσομεν</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">4</span><span class="qtext">أنتَ كنتَ ترى لكنك لا تريد أن تؤمن؟</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">ἔβλεπες ἀλλ' οὐ θέλεις πιστεύειν;</div><div class="why">ماضٍ ناقص مفرد مخاطب <span class="gk">ἔβλεπες</span>، ثم مضارع <span class="gk">θέλεις</span> + مصدر <span class="gk">πιστεύειν</span>؛ علامة الاستفهام اليونانية هي الفاصلة المنقوطة «؛».</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CHAPTER 3 : NOUNS ================= -->
+      <section class="chapter ch-3">
+        <div class="chapter-head">
+          <div class="chapter-num">Γ</div>
+          <h2>الدرس الثالث — أسماء الصرف الأول (Πρώτη Κλίση)</h2>
+        </div>
+        <p class="chapter-sub">تصريف الأسماء المؤنثة والمذكرة المنتمية إلى الصرف الأول، بحالاتها الأربع ومفردها وجمعها.</p>
+
+        <div class="section" id="l3-feminine">
+          <div class="subsection-title">أ. المؤنث — ثلاثة أنماط</div>
+          <p>
+            أسماء الصرف الأول غالبًا مؤنثة. تنتهي إمّا بـ<span class="gk">-η</span>، أو بـ<span class="gk">-α نقيّة</span> (بعد ε أو ι أو ρ فتبقى الألف في كل الحالات)،
+            أو بـ<span class="gk">-α غير نقيّة</span> (بعد حرف آخر فتتحوّل الألف إلى η في المفرد المضاف والمجرور بالإضافة).
+          </p>
+          <div class="table-wrap">
+            <table class="data-table">
+              <tr><th>الحالة</th><th class="gk">ἀρετή (فضيلة) — نمط η</th><th class="gk">χώρα (بلاد) — α نقيّة</th><th class="gk">δόξα (مجد) — α غير نقيّة</th></tr>
+              <tr><td>الفاعلية Nom.</td><td class="gk">ἡ ἀρετή</td><td class="gk">ἡ χώρα</td><td class="gk">ἡ δόξα</td></tr>
+              <tr><td>الندائية Voc.</td><td class="gk">ὦ ἀρετή</td><td class="gk">ὦ χώρα</td><td class="gk">ὦ δόξα</td></tr>
+              <tr><td>المفعولية Acc.</td><td class="gk">τὴν ἀρετήν</td><td class="gk">τὴν χώραν</td><td class="gk">τὴν δόξαν</td></tr>
+              <tr><td>الإضافية Gen.</td><td class="gk">τῆς ἀρετῆς</td><td class="gk">τῆς χώρας</td><td class="gk">τῆς δόξης</td></tr>
+              <tr><td>الجرّية Dat.</td><td class="gk">τῇ ἀρετῇ</td><td class="gk">τῇ χώρᾳ</td><td class="gk">τῇ δόξῃ</td></tr>
+            </table>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <tr><th>الحالة (جمع)</th><th class="gk">ἀρεταί</th><th class="gk">χῶραι</th><th class="gk">δόξαι</th></tr>
+              <tr><td>الفاعلية</td><td class="gk">αἱ ἀρεταί</td><td class="gk">αἱ χῶραι</td><td class="gk">αἱ δόξαι</td></tr>
+              <tr><td>الندائية</td><td class="gk">ὦ ἀρεταί</td><td class="gk">ὦ χῶραι</td><td class="gk">ὦ δόξαι</td></tr>
+              <tr><td>المفعولية</td><td class="gk">τὰς ἀρετάς</td><td class="gk">τὰς χώρας</td><td class="gk">τὰς δόξας</td></tr>
+              <tr><td>الإضافية</td><td class="gk">τῶν ἀρετῶν</td><td class="gk">τῶν χωρῶν</td><td class="gk">τῶν δοξῶν</td></tr>
+              <tr><td>الجرّية</td><td class="gk">ταῖς ἀρεταῖς</td><td class="gk">ταῖς χώραις</td><td class="gk">ταῖς δόξαις</td></tr>
+            </table>
+          </div>
+          <div class="key-point">
+            لاحظ: <b>الجمع في كل أنماط المؤنث يتّحد</b> في نهاياته (<span class="gk">-αι, -ας, -ῶν, -αις</span>) بصرف النظر عن نمط المفرد؛ الفروق الحقيقية تظهر فقط في المفرد (الإضافية والجرّية تحديدًا).
+          </div>
+          <div class="info-box">
+            <span class="lbl">تبسيط سريع للحفظ</span>
+            الفرق كله يتلخّص في المفرد بس، فركّز حفظك عليه: لو الاسم منتهي بـ<span class="gk">η</span>، أو بـ<span class="gk">α</span> جاية بعد <span class="gk">ε</span> أو <span class="gk">ι</span> أو <span class="gk">ρ</span> — الألف بتفضل زي ما هي في كل الحالات. أما لو الألف جاية بعد أي حرف تاني، هتتحوّل لـ<span class="gk">η</span> في حالتين بس: الإضافية والجرّية المفردتين (زي <span class="gk">δόξης</span> و<span class="gk">δόξῃ</span>). وأمّا الجمع فسيبه من بالك خالص — الأنماط الثلاثة كلها بتاخد نفس النهايات بالظبط.
+          </div>
+        </div>
+
+        <div class="section" id="l3-masculine">
+          <div class="subsection-title">ب. المذكر في الصرف الأول</div>
+          <p>توجد كلمات مذكرة قليلة في الصرف الأول (رغم أن أغلبه مؤنث)، وتنتهي بـ<span class="gk">-ας</span> أو <span class="gk">-ης</span>، وتتميّز عن المؤنث بأداة التعريف <span class="gk">ὁ</span> وبصيغة النداء الخاصة والإضافة المفردة المنتهية بـ<span class="gk">-ου</span>.</p>
+          <div class="table-wrap">
+            <table class="data-table">
+              <tr><th>الحالة</th><th class="gk">νεανίας (شابّ)</th><th class="gk">προφήτης (نبيّ)</th></tr>
+              <tr><td>الفاعلية</td><td class="gk">ὁ νεανίας</td><td class="gk">ὁ προφήτης</td></tr>
+              <tr><td>الندائية</td><td class="gk">ὦ νεανία</td><td class="gk">ὦ προφῆτα</td></tr>
+              <tr><td>المفعولية</td><td class="gk">τὸν νεανίαν</td><td class="gk">τὸν προφήτην</td></tr>
+              <tr><td>الإضافية</td><td class="gk">τοῦ νεανίου</td><td class="gk">τοῦ προφήτου</td></tr>
+              <tr><td>الجرّية</td><td class="gk">τῷ νεανίᾳ</td><td class="gk">τῷ προφήτῃ</td></tr>
+              <tr><td>ج. الفاعلية</td><td class="gk">οἱ νεανίαι</td><td class="gk">οἱ προφῆται</td></tr>
+              <tr><td>ج. الندائية</td><td class="gk">ὦ νεανίαι</td><td class="gk">ὦ προφῆται</td></tr>
+              <tr><td>ج. المفعولية</td><td class="gk">τοὺς νεανίας</td><td class="gk">τοὺς προφήτας</td></tr>
+              <tr><td>ج. الإضافية</td><td class="gk">τῶν νεανιῶν</td><td class="gk">τῶν προφητῶν</td></tr>
+              <tr><td>ج. الجرّية</td><td class="gk">τοῖς νεανίαις</td><td class="gk">τοῖς προφήταις</td></tr>
+            </table>
+          </div>
+          <div class="info-box"><span class="lbl">فخّ شائع</span> النداء المفرد للمذكر غالبًا يقصّر النهاية (<span class="gk">προφήτης</span> ← <span class="gk">ὦ προφῆτα</span>، لا <span class="gk">προφήτη</span>)، وهذا شكل خاص يجب حفظه ولا يُقاس عليه في المؤنث.</div>
+          <div class="info-box">
+            <span class="lbl">تبسيط سريع للحفظ</span>
+            الطريقة الأسرع لتمييز الصرف الأول كلّه: <b>ابحث عن أداة التعريف أولًا لا عن نهاية الاسم</b>. <span class="gk">ἡ</span> = مؤنث (بغضّ النظر هل ينتهي بـ<span class="gk">-η</span> أو <span class="gk">-α</span>)، و<span class="gk">ὁ</span> = مذكر (حتى لو انتهى بـ<span class="gk">-ας/-ης</span> الشبيهة بالمؤنث). بعدها فقط، انظر للنهاية لتعرف أيّ عمود من الجدول تتبع.
+          </div>
+        </div>
+
+        <div class="section" id="l3-vocab">
+          <div class="subsection-title">ج. المفردات</div>
+          <p class="small-note">أسماء مؤنثة (كلّها بأداة التعريف <span class="gk">ἡ</span>):</p>
+          <div class="cards">
+            <div class="card"><div class="gk-word">ἡ ἀρετή</div><div class="translit">hē aretē</div><div class="meaning">فضيلة<div class="meaning-en">virtue</div></div></div>
+            <div class="card"><div class="gk-word">ἡ δόξα</div><div class="translit">hē doxa</div><div class="meaning">مجد<div class="meaning-en">glory</div></div></div>
+            <div class="card"><div class="gk-word">ἡ χώρα</div><div class="translit">hē chōra</div><div class="meaning">بلد، أرض<div class="meaning-en">country, land</div></div></div>
+            <div class="card"><div class="gk-word">ἡ γῆ</div><div class="translit">hē gē</div><div class="meaning">أرض<div class="meaning-en">earth, land</div></div></div>
+            <div class="card"><div class="gk-word">ἡ ἀδελφή</div><div class="translit">hē adelphē</div><div class="meaning">أخت<div class="meaning-en">sister</div></div></div>
+            <div class="card"><div class="gk-word">ἡ ἀλήθεια</div><div class="translit">hē alētheia</div><div class="meaning">حقّ<div class="meaning-en">truth</div></div></div>
+            <div class="card"><div class="gk-word">ἡ ἁμαρτία</div><div class="translit">hē hamartia</div><div class="meaning">خطية<div class="meaning-en">sin</div></div></div>
+            <div class="card"><div class="gk-word">ἡ βασιλεία</div><div class="translit">hē basileia</div><div class="meaning">مملكة<div class="meaning-en">kingdom</div></div></div>
+            <div class="card"><div class="gk-word">ἡ βασίλεια</div><div class="translit">hē basileia</div><div class="meaning">ملكة<div class="meaning-en">queen</div></div></div>
+            <div class="card"><div class="gk-word">ἡ γενεά</div><div class="translit">hē genea</div><div class="meaning">جيل<div class="meaning-en">generation</div></div></div>
+            <div class="card"><div class="gk-word">ἡ γλῶσσα</div><div class="translit">hē glōssa</div><div class="meaning">لسان، لغة<div class="meaning-en">tongue, language</div></div></div>
+            <div class="card"><div class="gk-word">ἡ ἀγάπη</div><div class="translit">hē agapē</div><div class="meaning">محبة<div class="meaning-en">love</div></div></div>
+            <div class="card"><div class="gk-word">ἡ εἰρήνη</div><div class="translit">hē eirēnē</div><div class="meaning">سلام<div class="meaning-en">peace</div></div></div>
+            <div class="card"><div class="gk-word">ἡ ἐκκλησία</div><div class="translit">hē ekklēsia</div><div class="meaning">كنيسة<div class="meaning-en">church, assembly</div></div></div>
+            <div class="card"><div class="gk-word">ἡ ἐντολή</div><div class="translit">hē entolē</div><div class="meaning">وصية<div class="meaning-en">commandment</div></div></div>
+            <div class="card"><div class="gk-word">ἡ ἐπιστολή</div><div class="translit">hē epistolē</div><div class="meaning">رسالة<div class="meaning-en">letter, epistle</div></div></div>
+            <div class="card"><div class="gk-word">ἡ ζωή</div><div class="translit">hē zōē</div><div class="meaning">حياة<div class="meaning-en">life</div></div></div>
+            <div class="card"><div class="gk-word">ἡ ἡμέρα</div><div class="translit">hē hēmera</div><div class="meaning">يوم<div class="meaning-en">day</div></div></div>
+            <div class="card"><div class="gk-word">ἡ θυσία</div><div class="translit">hē thysia</div><div class="meaning">ذبيحة<div class="meaning-en">sacrifice</div></div></div>
+            <div class="card"><div class="gk-word">ἡ καρδία</div><div class="translit">hē kardia</div><div class="meaning">قلب<div class="meaning-en">heart</div></div></div>
+            <div class="card"><div class="gk-word">ἡ κώμη</div><div class="translit">hē kōmē</div><div class="meaning">قرية<div class="meaning-en">village</div></div></div>
+            <div class="card"><div class="gk-word">ἡ μετάνοια</div><div class="translit">hē metanoia</div><div class="meaning">توبة<div class="meaning-en">repentance</div></div></div>
+            <div class="card"><div class="gk-word">ἡ προσευχή</div><div class="translit">hē proseuchē</div><div class="meaning">صلاة<div class="meaning-en">prayer</div></div></div>
+            <div class="card"><div class="gk-word">ἡ θάλασσα</div><div class="translit">hē thalassa</div><div class="meaning">بحر<div class="meaning-en">sea</div></div></div>
+            <div class="card"><div class="gk-word">ἡ κυρία</div><div class="translit">hē kyria</div><div class="meaning">سيدة<div class="meaning-en">lady</div></div></div>
+            <div class="card"><div class="gk-word">ἡ κόρη</div><div class="translit">hē korē</div><div class="meaning">بنت، فتاة<div class="meaning-en">girl, daughter</div></div></div>
+            <div class="card"><div class="gk-word">ἡ φιλία</div><div class="translit">hē philia</div><div class="meaning">صداقة، محبة<div class="meaning-en">friendship, love</div></div></div>
+            <div class="card"><div class="gk-word">ἡ οἰκία</div><div class="translit">hē oikia</div><div class="meaning">بيت<div class="meaning-en">house</div></div></div>
+            <div class="card"><div class="gk-word">ἡ σοφία</div><div class="translit">hē sophia</div><div class="meaning">حكمة<div class="meaning-en">wisdom</div></div></div>
+            <div class="card"><div class="gk-word">ἡ γνώμη</div><div class="translit">hē gnōmē</div><div class="meaning">رأي<div class="meaning-en">opinion</div></div></div>
+          </div>
+          <p class="small-note" style="margin-top:14px">أسماء مذكرة (بأداة التعريف <span class="gk">ὁ</span>) وأدوات ربط:</p>
+          <div class="cards">
+            <div class="card"><div class="gk-word">ὁ νεανίας</div><div class="translit">ho neanias</div><div class="meaning">شاب<div class="meaning-en">young man</div></div></div>
+            <div class="card"><div class="gk-word">ὁ προφήτης</div><div class="translit">ho prophētēs</div><div class="meaning">نبيّ<div class="meaning-en">prophet</div></div></div>
+            <div class="card"><div class="gk-word">ὁ βαπτιστής</div><div class="translit">ho baptistēs</div><div class="meaning">المعمدان<div class="meaning-en">the Baptist</div></div></div>
+            <div class="card"><div class="gk-word">ὁ στρατιώτης</div><div class="translit">ho stratiōtēs</div><div class="meaning">جندي<div class="meaning-en">soldier</div></div></div>
+            <div class="card"><div class="gk-word">ὁ δεσπότης</div><div class="translit">ho despotēs</div><div class="meaning">سيّد<div class="meaning-en">master, lord</div></div></div>
+            <div class="card"><div class="gk-word">ὁ ἐργάτης</div><div class="translit">ho ergatēs</div><div class="meaning">عامل<div class="meaning-en">worker</div></div></div>
+            <div class="card"><div class="gk-word">ὁ μαθητής</div><div class="translit">ho mathētēs</div><div class="meaning">تلميذ<div class="meaning-en">disciple</div></div></div>
+            <div class="card"><div class="gk-word">ὁ ποιητής</div><div class="translit">ho poiētēs</div><div class="meaning">شاعر<div class="meaning-en">maker, poet, creator</div></div></div>
+            <div class="card"><div class="gk-word">ὁ κριτής</div><div class="translit">ho kritēs</div><div class="meaning">قاضٍ<div class="meaning-en">judge</div></div></div>
+            <div class="card"><div class="gk-word">ὁ πολίτης</div><div class="translit">ho politēs</div><div class="meaning">مواطن<div class="meaning-en">citizen</div></div></div>
+            <div class="card"><div class="gk-word">κελεύω</div><div class="translit">keleuō</div><div class="meaning">آمر (يتبعها مصدر)<div class="meaning-en">I command, I order (+ infinitive)</div></div></div>
+            <div class="card"><div class="gk-word">κωλύω</div><div class="translit">kōlyō</div><div class="meaning">أمنع<div class="meaning-en">I hinder, I prevent</div></div></div>
+            <div class="card"><div class="gk-word">φεύγω</div><div class="translit">pheugō</div><div class="meaning">أهرب<div class="meaning-en">I flee</div></div></div>
+            <div class="card"><div class="gk-word">μέν...δέ</div><div class="translit">men...de</div><div class="meaning">من جهة... ومن جهة أخرى<div class="meaning-en">on the one hand... on the other hand</div></div></div>
+          </div>
+        </div>
+
+        <div class="section" id="l3-exercise">
+          <div class="subsection-title">د. التمرين الثالث — مشروح بالكامل</div>
+
+          <div class="exercise-block">
+            <h4>أكمل الفراغ</h4>
+            <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext"><span class="gk">ἡ κόρη</span> في حالة الجرّ (Dative) = .....</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">τῇ κόρῃ</div><div class="why">اسم مؤنث نمط <span class="gk">-η</span>، فالجرّية المفردة تأخذ الثنائية الخفية <span class="gk">ῃ</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">2</span><span class="qtext"><span class="gk">τῶν μαθητῶν</span> في المفرد = .....</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">τοῦ μαθητοῦ</div><div class="why">مذكر نمط <span class="gk">-ης</span>؛ إضافية الجمع <span class="gk">-ῶν</span> تقابلها إضافية المفرد <span class="gk">-ου</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">3</span><span class="qtext"><span class="gk">τῇ θαλάττῃ</span> في حالة المفعولية = .....</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">τὴν θάλατταν</div><div class="why">(<span class="gk">θάλαττα</span> هي الصيغة الأتيكية القديمة لكلمة <span class="gk">θάλασσα</span> بحر)؛ من الجرّية <span class="gk">-ῃ</span> إلى المفعولية <span class="gk">-αν</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">4</span><span class="qtext"><span class="gk">τὰς κώμας</span> في المفرد = .....</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">τὴν κώμην</div><div class="why">جمع مفعولية <span class="gk">-ας</span> يقابله مفرد مفعولية <span class="gk">-ην</span> (نمط <span class="gk">-η</span>).</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">5</span><span class="qtext"><span class="gk">ὦ δεσπόται</span> في المفرد = .....</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">ὦ δέσποτα</div><div class="why">نداء الجمع <span class="gk">-όται</span> يقابله نداء المفرد <span class="gk">-οτα</span> (نهاية مقصورة تشبه <span class="gk">προφῆτα</span>).</div></div>
+            </div>
+          </div>
+
+          <div class="exercise-block">
+            <h4>ترجِم وأعرِب الجمل</h4>
+            <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext"><span class="gk">δόξα Μαρία.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">مجدًا يا مريم! (المجد لمريم)</div><div class="ans-line-en">Glory, O Mary! (Glory to Mary!)</div><div class="why"><span class="gk">δόξα</span> اسم فاعلية مستخدم نداءً/تعجّبًا، <span class="gk">Μαρία</span> اسم علم مفرد فاعلية/نداء بلا أداة تعريف.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">2</span><span class="qtext"><span class="gk">δόξα τῆς Μαρίας.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">مجد مريم.</div><div class="ans-line-en">The glory of Mary.</div><div class="why"><span class="gk">τῆς Μαρίας</span>: حالة الإضافة (Genitive) المفردة، تفيد الملكية «مجدُ مريمَ».</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">3</span><span class="qtext"><span class="gk">δόξα τῇ Μαρίᾳ.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">المجد لمريم.</div><div class="ans-line-en">Glory be to Mary.</div><div class="why"><span class="gk">τῇ Μαρίᾳ</span>: حالة الجرّ (Dative) المفردة، تفيد الاستحقاق/المنفعة «المجد لأجل مريم».</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">4</span><span class="qtext"><span class="gk">ὁ κριτὴς οὐ λέξει τὴν ἀλήθειαν τῷ νεανίᾳ.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">القاضي لن يقول الحقّ للشابّ.</div><div class="ans-line-en">The judge will not tell the truth to the young man.</div><div class="why"><span class="gk">ὁ κριτής</span>: فاعل، فاعلية مفردة. <span class="gk">λέξει</span>: فعل مستقبل خبري غائب مفرد من <span class="gk">λέγω</span>، منفيّ بـ<span class="gk">οὐ</span>. <span class="gk">τὴν ἀλήθειαν</span>: مفعول به مباشر، مفعولية. <span class="gk">τῷ νεανίᾳ</span>: مفعول به غير مباشر، جرّية.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">5</span><span class="qtext"><span class="gk">Ἰωάννης ὁ βαπτιστὴς ἐδίδασκε τοὺς μαθητὰς τὴν ἀρετὴν καὶ τὴν μετάνοιαν.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">يوحنا المعمدان كان يعلِّم التلاميذ الفضيلةَ والتوبة.</div><div class="ans-line-en">John the Baptist was teaching the disciples virtue and repentance.</div><div class="why"><span class="gk">Ἰωάννης ὁ βαπτιστής</span>: فاعل فاعلية مفردة مع نعت. <span class="gk">ἐδίδασκε</span>: ماضٍ ناقص غائب مفرد، يفيد التعليم المتكرر/المستمر. <span class="gk">τοὺς μαθητάς</span>: مفعول به أول (مفعولية جمع). <span class="gk">τὴν ἀρετὴν καὶ τὴν μετάνοιαν</span>: مفعول به ثانٍ معطوف (مفعولية مفردة).</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">6</span><span class="qtext"><span class="gk">ἡ βασίλεια καὶ οἱ πολῖται τῆς βασιλείας ἐπίστευον ταῖς γνώμαις τοῦ προφήτου.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة والإعراب</button>
+              <div class="answer"><div class="ans-line">الملكة ومواطنو المملكة كانوا يؤمنون بآراء النبيّ.</div><div class="ans-line-en">The queen and the citizens of the kingdom believed in the opinions of the prophet.</div><div class="why"><span class="gk">ἡ βασίλεια καὶ οἱ πολῖται</span>: فاعل مركّب فاعلية (مفرد+جمع). <span class="gk">τῆς βασιλείας</span>: إضافة مفردة. <span class="gk">ἐπίστευον</span>: ماضٍ ناقص جمع (يتبع أقرب فاعل أو الفاعل المركّب)، من <span class="gk">πιστεύω</span> الذي يتبعه مفعول في حالة الجرّ لا المفعولية. <span class="gk">ταῖς γνώμαις</span>: جرّية جمع. <span class="gk">τοῦ προφήτου</span>: إضافة مفردة مذكر.</div></div>
+            </div>
+          </div>
+
+          <div class="exercise-block">
+            <h4>ترجِم إلى اليونانية</h4>
+            <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext">علّم الشاعر بناته أن يكتبن حسنًا.</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">ὁ ποιητὴς ἐδίδασκε τὰς κόρας εὖ γράφειν.</div><div class="why">ماضٍ ناقص غائب مفرد <span class="gk">ἐδίδασκε</span> + مفعول مفعولية جمع <span class="gk">τὰς κόρας</span> + مصدر <span class="gk">γράφειν</span>.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">2</span><span class="qtext">أمر السيّد مواطني أثينا ألّا يهربوا.</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">ὁ δεσπότης ἐκέλευε τοὺς πολίτας τῶν Ἀθηνῶν μὴ φεύγειν.</div><div class="why"><span class="gk">κελεύω</span> يتبعها مفعول بالمفعولية + مصدر منفيّ بـ<span class="gk">μή</span> (لأنه مصدر لا فعل خبري).</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">3</span><span class="qtext">للبحّار سلطان البحر، أمّا الجنود فلهم سلطان الأرض.</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+              <div class="answer"><div class="ans-line gk">ὁ ναύτης ἔχει τὴν ἐξουσίαν τῆς θαλάσσης, οἱ δὲ στρατιῶται ἔχουσι τὴν ἐξουσίαν τῆς γῆς.</div><div class="why">تُستخدم <span class="gk">μέν...δέ</span> عادة للمقابلة، وهنا استُبدلت بـ<span class="gk">οἱ δέ</span> فقط للاختصار الطبيعي في الجملة الثانية؛ «بحّار» و«سلطان» كلمتان جديدتان غير واردتين في مفردات الدرس، أُضيفتا هنا بمنطق الصرف نفسه: <span class="gk">ὁ ναύτης</span> (مذكر صرف أول)، <span class="gk">ἡ ἐξουσία</span> (مؤنث صرف أول نمط α نقيّة).</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CHAPTER 4 : 2ND DECLENSION NOUNS ================= -->
+      <section class="chapter ch-4">
+        <div class="chapter-head">
+          <div class="chapter-num">Δ</div>
+          <h2>الدرس الرابع — أسماء الصرف الثاني (Δευτέρα Κλίση)</h2>
+        </div>
+        <p class="chapter-sub">تصريف الأسماء المذكرة والمؤنثة المنتهية بـ<span class="gk">-ος</span> والمحايدة المنتهية بـ<span class="gk">-ον</span>، مع حروف الجرّ الأساسية.</p>
+
+        <div class="section" id="l4-declension">
+          <div class="subsection-title">أ. الجدول الصرفي — مذكر، مؤنث، محايد</div>
+          <p>
+            أغلب أسماء الصرف الثاني مذكرة وتنتهي بـ<span class="gk">-ος</span> (مثل <span class="gk">λόγος</span>)، وتوجد كلمات قليلة مؤنثة بنفس النهاية <span class="gk">-ος</span> (مثل <span class="gk">ὁδός</span> و<span class="gk">νῆσος</span>) تُعرف بأداة التعريف المؤنثة فقط لا بالنهاية، بينما المحايد ينتهي بـ<span class="gk">-ον</span> (مثل <span class="gk">ἔργον</span>) وتتساوى فيه دائمًا حالتا الفاعلية والمفعولية والندائية.
+          </p>
+          <div class="table-wrap">
+            <table class="data-table">
+              <tr><th>الحالة (مفرد)</th><th class="gk">λόγος (كلمة، مذكر)</th><th class="gk">ὁδός (طريق، مؤنث)</th><th class="gk">ἔργον (عمل، محايد)</th></tr>
+              <tr><td>الفاعلية Nom.</td><td class="gk">ὁ λόγος</td><td class="gk">ἡ ὁδός</td><td class="gk">τὸ ἔργον</td></tr>
+              <tr><td>الندائية Voc.</td><td class="gk">ὦ λόγε</td><td class="gk">ὦ ὁδέ</td><td class="gk">ὦ ἔργον</td></tr>
+              <tr><td>المفعولية Acc.</td><td class="gk">τὸν λόγον</td><td class="gk">τὴν ὁδόν</td><td class="gk">τὸ ἔργον</td></tr>
+              <tr><td>الإضافية Gen.</td><td class="gk">τοῦ λόγου</td><td class="gk">τῆς ὁδοῦ</td><td class="gk">τοῦ ἔργου</td></tr>
+              <tr><td>الجرّية Dat.</td><td class="gk">τῷ λόγῳ</td><td class="gk">τῇ ὁδῷ</td><td class="gk">τῷ ἔργῳ</td></tr>
+            </table>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <tr><th>الحالة (جمع)</th><th class="gk">λόγοι</th><th class="gk">ὁδοί</th><th class="gk">ἔργα</th></tr>
+              <tr><td>الفاعلية</td><td class="gk">οἱ λόγοι</td><td class="gk">αἱ ὁδοί</td><td class="gk">τὰ ἔργα</td></tr>
+              <tr><td>الندائية</td><td class="gk">ὦ λόγοι</td><td class="gk">ὦ ὁδοί</td><td class="gk">ὦ ἔργα</td></tr>
+              <tr><td>المفعولية</td><td class="gk">τοὺς λόγους</td><td class="gk">τὰς ὁδούς</td><td class="gk">τὰ ἔργα</td></tr>
+              <tr><td>الإضافية</td><td class="gk">τῶν λόγων</td><td class="gk">τῶν ὁδῶν</td><td class="gk">τῶν ἔργων</td></tr>
+              <tr><td>الجرّية</td><td class="gk">τοῖς λόγοις</td><td class="gk">ταῖς ὁδοῖς</td><td class="gk">τοῖς ἔργοις</td></tr>
+            </table>
+          </div>
+          <div class="key-point">
+            لاحظ: <b>المحايد (Neuter)</b> تتطابق فيه دائمًا صيغ الفاعلية والندائية والمفعولية في كلٍّ من المفرد والجمع، وجمعه دائمًا ينتهي بـ<span class="gk">-α</span> حتى لو كان مفرده <span class="gk">-ον</span> — وهذه القاعدة تنطبق على كل أسماء المحايد في كل الصروف تقريبًا.
+          </div>
+          <div class="info-box"><span class="lbl">فخّ شائع</span> بعض أسماء الصرف الثاني مؤنثة رغم نهايتها <span class="gk">-ος</span> الشبيهة بالمذكر (مثل <span class="gk">ἡ ὁδός</span> طريق، و<span class="gk">ἡ νῆσος</span> جزيرة) — التمييز الوحيد هو أداة التعريف <span class="gk">ἡ</span> لا نهاية الاسم نفسه.</div>
+          <div class="info-box">
+            <span class="lbl">تبسيط سريع للحفظ</span>
+            قارن بسرعة بين الصرفين الأول والثاني: في الصرف الأول (الدرس الثالث) كانت النهايات المميِّزة <span class="gk">-η / -α</span>، وهنا في الصرف الثاني صارت <span class="gk">-ος / -ον</span>. القاعدة العملية: <b>-ος للمذكر (وأحيانًا المؤنث النادر)</b>، و<b>-ον للمحايد فقط</b>. احفظ عمود <span class="gk">λόγος</span> جيّدًا، فكل أسماء المذكر تقريبًا تتبعه حرفيًّا، وعمود <span class="gk">ἔργον</span> لأن كل أسماء المحايد في كل الصروف تشترك في قاعدة «الفاعلية = الندائية = المفعولية».
+          </div>
+        </div>
+
+        <div class="section" id="l4-vocab">
+          <div class="subsection-title">ب. المفردات</div>
+          <p class="small-note">أسماء مذكرة (بأداة التعريف <span class="gk">ὁ</span>):</p>
+          <div class="cards">
+            <div class="card"><div class="gk-word">ὁ διάκονος</div><div class="translit">ho diakonos</div><div class="meaning">خادم، شمّاس<div class="meaning-en">servant, helper, deacon</div></div></div>
+            <div class="card"><div class="gk-word">ὁ δοῦλος</div><div class="translit">ho doulos</div><div class="meaning">عبد<div class="meaning-en">slave</div></div></div>
+            <div class="card"><div class="gk-word">ὁ καρπός</div><div class="translit">ho karpos</div><div class="meaning">ثمر<div class="meaning-en">fruit</div></div></div>
+            <div class="card"><div class="gk-word">ὁ λαός</div><div class="translit">ho laos</div><div class="meaning">شعب<div class="meaning-en">people</div></div></div>
+            <div class="card"><div class="gk-word">ὁ οἶκος</div><div class="translit">ho oikos</div><div class="meaning">بيت<div class="meaning-en">house</div></div></div>
+            <div class="card"><div class="gk-word">ὁ κόσμος</div><div class="translit">ho kosmos</div><div class="meaning">عالم<div class="meaning-en">world</div></div></div>
+            <div class="card"><div class="gk-word">ὁ οἶνος</div><div class="translit">ho oinos</div><div class="meaning">خمر<div class="meaning-en">wine</div></div></div>
+            <div class="card"><div class="gk-word">ὁ νόμος</div><div class="translit">ho nomos</div><div class="meaning">ناموس، شريعة<div class="meaning-en">law</div></div></div>
+            <div class="card"><div class="gk-word">ὁ σταυρός</div><div class="translit">ho stauros</div><div class="meaning">صليب<div class="meaning-en">cross</div></div></div>
+            <div class="card"><div class="gk-word">ὁ υἱός</div><div class="translit">ho huios</div><div class="meaning">ابن<div class="meaning-en">son</div></div></div>
+            <div class="card"><div class="gk-word">ὁ λόγος</div><div class="translit">ho logos</div><div class="meaning">كلمة، عقل، منطق، اللوغوس<div class="meaning-en">word, reason, logic, Logos</div></div></div>
+            <div class="card"><div class="gk-word">ὁ Χριστός</div><div class="translit">ho Christos</div><div class="meaning">المسيح<div class="meaning-en">Christ</div></div></div>
+            <div class="card"><div class="gk-word">ὁ Θεός</div><div class="translit">ho Theos</div><div class="meaning">الله<div class="meaning-en">God</div></div></div>
+            <div class="card"><div class="gk-word">ὁ κύριος</div><div class="translit">ho kyrios</div><div class="meaning">ربّ، سيّد<div class="meaning-en">lord</div></div></div>
+            <div class="card"><div class="gk-word">ὁ ψαλμός</div><div class="translit">ho psalmos</div><div class="meaning">مزمور<div class="meaning-en">psalm</div></div></div>
+            <div class="card"><div class="gk-word">ὁ ἀπόστολος</div><div class="translit">ho apostolos</div><div class="meaning">رسول<div class="meaning-en">apostle</div></div></div>
+            <div class="card"><div class="gk-word">ὁ οὐρανός</div><div class="translit">ho ouranos</div><div class="meaning">سماء<div class="meaning-en">sky, heaven</div></div></div>
+            <div class="card"><div class="gk-word">ὁ ἄγγελος</div><div class="translit">ho angelos</div><div class="meaning">رسول، ملاك<div class="meaning-en">messenger, angel</div></div></div>
+            <div class="card"><div class="gk-word">ὁ Παῦλος</div><div class="translit">ho Paulos</div><div class="meaning">بولس<div class="meaning-en">Paul</div></div></div>
+            <div class="card"><div class="gk-word">ὁ Πέτρος</div><div class="translit">ho Petros</div><div class="meaning">بطرس<div class="meaning-en">Peter</div></div></div>
+            <div class="card"><div class="gk-word">ὁ Μάρκος</div><div class="translit">ho Markos</div><div class="meaning">مرقس<div class="meaning-en">Mark</div></div></div>
+            <div class="card"><div class="gk-word">ὁ ποιητής</div><div class="translit">ho poiētēs</div><div class="meaning">خالق، صانع، شاعر<div class="meaning-en">maker, poet, creator</div></div></div>
+          </div>
+          <p class="small-note" style="margin-top:14px">أسماء مؤنثة من الصرف الثاني (بأداة التعريف <span class="gk">ἡ</span>) وأخرى من الصرف الأول للمقارنة:</p>
+          <div class="cards">
+            <div class="card"><div class="gk-word">ἡ νῆσος</div><div class="translit">hē nēsos</div><div class="meaning">جزيرة<div class="meaning-en">island</div></div></div>
+            <div class="card"><div class="gk-word">ἡ ὁδός</div><div class="translit">hē hodos</div><div class="meaning">طريق<div class="meaning-en">way, road</div></div></div>
+            <div class="card"><div class="gk-word">ἡ σωτηρία</div><div class="translit">hē sōtēria</div><div class="meaning">خلاص (صرف أول)<div class="meaning-en">salvation</div></div></div>
+          </div>
+          <p class="small-note" style="margin-top:14px">أسماء محايدة (بأداة التعريف <span class="gk">τό</span>):</p>
+          <div class="cards">
+            <div class="card"><div class="gk-word">τὸ βιβλίον</div><div class="translit">to biblion</div><div class="meaning">كتاب، سفر<div class="meaning-en">book</div></div></div>
+            <div class="card"><div class="gk-word">τὸ ἔργον</div><div class="translit">to ergon</div><div class="meaning">عمل، فعل<div class="meaning-en">work, deed</div></div></div>
+            <div class="card"><div class="gk-word">τὸ εὐαγγέλιον</div><div class="translit">to euangelion</div><div class="meaning">البشارة، الإنجيل<div class="meaning-en">the good news, the Gospel</div></div></div>
+            <div class="card"><div class="gk-word">τὸ ἱερόν</div><div class="translit">to hieron</div><div class="meaning">هيكل، حرم<div class="meaning-en">temple, shrine</div></div></div>
+            <div class="card"><div class="gk-word">τὸ μυστήριον</div><div class="translit">to mystērion</div><div class="meaning">سرّ<div class="meaning-en">mystery</div></div></div>
+            <div class="card"><div class="gk-word">τὸ πλοῖον</div><div class="translit">to ploion</div><div class="meaning">سفينة<div class="meaning-en">ship</div></div></div>
+            <div class="card"><div class="gk-word">τὸ τέκνον</div><div class="translit">to teknon</div><div class="meaning">ولد<div class="meaning-en">child</div></div></div>
+          </div>
+        </div>
+
+        <div class="section" id="l4-prepositions">
+          <div class="subsection-title">ج. حروف الجرّ الأساسية (Prepositions)</div>
+          <p>حرف الجرّ اليوناني يتحكّم في حالة الاسم الذي يليه، وقد يأخذ الحرف الواحد أكثر من حالة بمعنى مختلف لكلٍّ منها.</p>
+          <div class="table-wrap">
+            <table class="data-table">
+              <tr><th>حرف الجرّ</th><th>الحالة</th><th>المعنى</th></tr>
+              <tr><td class="gk">ἀπό</td><td>+ acc.</td><td>from — من</td></tr>
+              <tr><td class="gk">εἰς / ἐς</td><td>+ acc.</td><td>to, into, against — إلى، داخل، ضدّ</td></tr>
+              <tr><td class="gk">διά</td><td>+ acc.</td><td>because of, through — بسبب، من خلال</td></tr>
+              <tr><td class="gk">πρός</td><td>+ acc.</td><td>to, towards — إلى، نحو</td></tr>
+              <tr><td class="gk">παρά</td><td>+ acc.</td><td>against, beside, near — ضدّ، بجانب، قرب</td></tr>
+              <tr><td class="gk">κατά</td><td>+ acc.</td><td>according to, down, along — بحسب، أسفل، على طول</td></tr>
+              <tr><td class="gk">κατά</td><td>+ gen.</td><td>against, down (from) — ضدّ، من أعلى إلى أسفل</td></tr>
+              <tr><td class="gk">μετά</td><td>+ acc.</td><td>with — مع</td></tr>
+              <tr><td class="gk">μετά</td><td>+ gen.</td><td>after — بعد</td></tr>
+              <tr><td class="gk">ἕνεκα / εἵνεκα</td><td>+ gen.</td><td>on account of, for the sake of — بسبب، من أجل</td></tr>
+              <tr><td class="gk">ἐκ / ἐξ</td><td>+ gen.</td><td>from, out of, as a result of — من، خارج من، نتيجةً لـ</td></tr>
+              <tr><td class="gk">περί</td><td>+ gen.</td><td>about, concerning — عن، بخصوص</td></tr>
+              <tr><td class="gk">ἀντί</td><td>+ gen.</td><td>in the place of, instead of — بدلًا من، عوضًا عن</td></tr>
+              <tr><td class="gk">ἐν</td><td>+ dat.</td><td>in, on, at, among — في، على، عند، بين</td></tr>
+              <tr><td class="gk">ἐπί</td><td>+ dat.</td><td>for the purpose, on — لأجل، على</td></tr>
+              <tr><td class="gk">σύν</td><td>+ dat.</td><td>with — مع</td></tr>
+              <tr><td class="gk">ὑπέρ</td><td>+ gen.</td><td>over, above, beyond — فوق، وراء</td></tr>
+            </table>
+          </div>
+          <div class="info-box">
+            <span class="lbl">معاني إضافية لـ<span class="gk">ὑπέρ + gen.</span></span>
+            في دفاعًا عن، بالنيابة عن (in defense of, on behalf of) — من أجل رخاء أو سلامة شخص (for the prosperity or safety of) — من أجل، بدلًا من، باسم؛ بتفويض من (for, instead of, in the name of; by commission from) — كممثّل عن، باسم (as representative of, in the name of) — من أجل، بسبب، لعلّة (for, because of, by reason of, on account of).
+          </div>
+          <div class="info-box">
+            <span class="lbl">تبسيط سريع للحفظ</span>
+            متحفظش كل حرف جر لوحده — اربطهم بالحالة اللي بعدهم: لو جاي قبل مفعولية (acc.) غالبًا معناه حركة أو اتجاه (زي <span class="gk">εἰς</span> إلى، <span class="gk">πρός</span> نحو)؛ لو جاي قبل إضافية (gen.) غالبًا معناه أصل أو انفصال (زي <span class="gk">ἐκ</span> من، <span class="gk">ἀπό</span> من)؛ ولو جاي قبل جرّية (dat.) غالبًا معناه مكان أو مصاحبة (زي <span class="gk">ἐν</span> في، <span class="gk">σύν</span> مع). وخُد بالك بالذات من <span class="gk">κατά</span> و<span class="gk">μετά</span> لأنهم الوحيدين اللي معناهم بيتغيّر تغيّرًا جذريًّا حسب الحالة اللي بعدهم.
+          </div>
+        </div>
+
+        <div class="section" id="l4-exercise">
+          <div class="subsection-title">د. التمرين الرابع — ترجمة وإعراب</div>
+
+          <div class="exercise-block">
+            <h4>ترجِم وأعرِب الجمل</h4>
+            <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext"><span class="gk">Γράφει μὲν τὴν ἐπιστολὴν περὶ τῆς μετανοίας Ἰωάννης ὁ ἀπόστολος πρὸς τὴν ἐκκλησίαν τῆς Σμύρνης, περὶ δὲ τῆς ἀρετῆς πρὸς τὴν ἐκκλησίαν τῆς Φιλαδελφίας.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الترجمة والإعراب</button>
+              <div class="answer"><div class="ans-line">يوحنا الرسول يكتب الرسالة عن التوبة إلى كنيسة سميرنا، وعن الفضيلة إلى كنيسة فيلادلفيا.</div><div class="ans-line-en">John the Apostle writes the letter about repentance to the church of Smyrna, and about virtue to the church of Philadelphia.</div><div class="why"><span class="gk">Ἰωάννης ὁ ἀπόστολος</span>: فاعل فاعلية مفردة. <span class="gk">Γράφει</span>: مضارع خبري غائب مفرد من <span class="gk">γράφω</span>. <span class="gk">τὴν ἐπιστολήν</span>: مفعول به مباشر، مفعولية (صرف أول). <span class="gk">περὶ τῆς μετανοίας</span> و<span class="gk">περὶ τῆς ἀρετῆς</span>: جارّ ومجرور بالإضافية بعد <span class="gk">περί</span>. <span class="gk">πρὸς τὴν ἐκκλησίαν τῆς Σμύρνης/Φιλαδελφίας</span>: جارّ ومجرور بالمفعولية بعد <span class="gk">πρός</span>، مع إضافة اسم المدينة. <span class="gk">μέν...δέ</span>: أداة مقابلة بين الجملتين.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">2</span><span class="qtext"><span class="gk">Προσεύξασθε ὑπὲρ τῶν θυσιῶν ἡμῶν καὶ τῆς εἰρήνης καὶ τῆς ἁγίας μόνης καθολικῆς καὶ ἀποστολικῆς τοῦ Θεοῦ ἐκκλησίας.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الترجمة والإعراب</button>
+              <div class="answer"><div class="ans-line">صلّوا من أجل قرابيننا، ومن أجل السلام، ومن أجل كنيسة الله الواحدة المقدّسة الجامعة الرسولية.</div><div class="ans-line-en">Pray for our offerings, for peace, and for the one, holy, catholic and apostolic Church of God.</div><div class="why"><span class="gk">Προσεύξασθε</span>: فعل أمر مبني للمجهول/المطاوع (middle) جمع مخاطب من <span class="gk">προσεύχομαι</span>. <span class="gk">ὑπὲρ</span> + الإضافية يتكرّر ثلاث مرات: <span class="gk">τῶν θυσιῶν ἡμῶν</span>، <span class="gk">τῆς εἰρήνης</span>، <span class="gk">τῆς ... ἐκκλησίας</span> (اسم موصوف بأربع صفات: <span class="gk">ἁγίας، μόνης، καθολικῆς، ἀποστολικῆς</span>) مع <span class="gk">τοῦ Θεοῦ</span> إضافة ثانية داخل العبارة.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">3</span><span class="qtext"><span class="gk">Πιστεύω εἰς ἕνα Θεόν, ... ποιητὴν οὐρανοῦ καὶ γῆς, ..... Καὶ εἰς ἕνα Κύριον Ἰησοῦν Χριστόν, τὸν Υἱὸν τοῦ Θεοῦ, .... Θεὸν ἀληθινὸν ἐκ Θεοῦ ἀληθινοῦ.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الترجمة والإعراب</button>
+              <div class="answer"><div class="ans-line">أؤمن بإله واحد، ... خالق السماء والأرض، .... وبربٍّ واحد يسوع المسيح، ابن الله، .... إلهًا حقيقيًّا من إله حقيقيّ.</div><div class="ans-line-en">I believe in one God,... maker of heaven and earth,... and in one Lord Jesus Christ, the Son of God,... true God of true God.</div><div class="why">مطلع قانون الإيمان النيقاوي. <span class="gk">Πιστεύω</span>: مضارع متكلم مفرد. <span class="gk">εἰς ἕνα Θεόν</span> و<span class="gk">εἰς ἕνα Κύριον</span>: جارّ ومجرور بالمفعولية بعد <span class="gk">εἰς</span> (الإيمان بـ). <span class="gk">ποιητὴν οὐρανοῦ καὶ γῆς</span>: نعت بدل في حالة المفعولية، مضاف إلى <span class="gk">οὐρανοῦ</span> (صرف ثانٍ) و<span class="gk">γῆς</span> (صرف أول) بالإضافية. <span class="gk">τὸν Υἱὸν τοῦ Θεοῦ</span>: بدل في المفعولية + إضافة. <span class="gk">Θεὸν ἀληθινὸν ἐκ Θεοῦ ἀληθινοῦ</span>: بدل آخر بالمفعولية، ثم <span class="gk">ἐκ</span> + إضافية.</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">4</span><span class="qtext"><span class="gk">Εὐλογημένη ἡ βασιλεία τοῦ Πατρὸς καὶ τοῦ Υἱοῦ καὶ τοῦ ἁγίου Πνεύματος, νῦν καὶ ἀεὶ καὶ εἰς τοὺς αἰῶνας τῶν αἰώνων.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الترجمة والإعراب</button>
+              <div class="answer"><div class="ans-line">مباركة هي مملكة الآب والابن والروح القدس، الآن وكلّ أوان وإلى دهر الدهور.</div><div class="ans-line-en">Blessed is the kingdom of the Father, the Son, and the Holy Spirit, now and ever and unto the ages of ages.</div><div class="why"><span class="gk">Εὐλογημένη</span>: صفة/اسم مفعول مؤنث مفرد فاعلية، خبر مقدّم. <span class="gk">ἡ βασιλεία</span>: مبتدأ مؤخّر فاعلية (صرف أول). <span class="gk">τοῦ Πατρός، τοῦ Υἱοῦ، τοῦ ἁγίου Πνεύματος</span>: ثلاث إضافات معطوفة. <span class="gk">εἰς τοὺς αἰῶνας τῶν αἰώνων</span>: <span class="gk">εἰς</span> + مفعولية جمع (صرف ثانٍ)، ثم إضافة جمع أخرى للتوكيد (تعبير سامي الأصل: «دهر الدهور»).</div></div>
+            </div>
+            <div class="qa"><div class="q"><span class="qnum">5</span><span class="qtext"><span class="gk">Ὑπὲρ τῆς εἰρήνης καὶ τῆς σωτηρίας τῶν ψυχῶν ἡμῶν.</span></span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الترجمة والإعراب</button>
+              <div class="answer"><div class="ans-line">من أجل السلام وخلاص نفوسنا.</div><div class="ans-line-en">For the peace and the salvation of our souls.</div><div class="why"><span class="gk">Ὑπὲρ</span> + إضافية معطوفة مرّتين: <span class="gk">τῆς εἰρήνης</span> و<span class="gk">τῆς σωτηρίας</span> (كلتاهما صرف أول)، ثمّ <span class="gk">τῶν ψυχῶν ἡμῶν</span> إضافة ثانية (صرف ثانٍ محايد... ملاحظة: <span class="gk">ψυχή</span> في الأصل صرف أول مؤنث) تابعة لـ<span class="gk">σωτηρίας</span>، مع الضمير <span class="gk">ἡμῶν</span> إضافة ملكية.</div></div>
+            </div>
+          </div>
+
+          <div class="exercise-block">
+            <h4>ترجِم إلى اليونانية</h4>
+            <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext">السيّد لا يريد أن يعبد هيرا، لكنّ الفتيات سيعبدنها حسنًا.</span></div>
+              <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة المقترحة</button>
+              <div class="answer"><div class="ans-line gk">ὁ δεσπότης οὐ βούλεται σέβεσθαι τὴν Ἥραν, αἱ δὲ κόραι σεβήσονται αὐτὴν εὖ.</div><div class="why"><span class="gk">ὁ δεσπότης</span>: فاعل صرف أول مذكر (من مفردات الدرس الثالث). <span class="gk">οὐ βούλεται</span>: مضارع خبري غائب مفرد منفيّ بـ<span class="gk">οὐ</span>. <span class="gk">σέβεσθαι</span>: مصدر مطاوع (يعبد). <span class="gk">τὴν Ἥραν</span>: مفعول به مفعولية (اسم علم مؤنث). <span class="gk">αἱ κόραι</span>: فاعل جمع مؤنث (صرف أول). <span class="gk">σεβήσονται</span>: مستقبل مطاوع غائب جمع. <span class="gk">αὐτήν</span>: ضمير الغائب مفعولية يعود على <span class="gk">Ἥραν</span>. <span class="gk">εὖ</span>: ظرف حال «حسنًا».</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PARSING GUIDE ================= -->
+      <section class="chapter ch-5" id="parsing">
+        <div class="chapter-head">
+          <div class="chapter-num">؟</div>
+          <h2>كيف نُعرب الكلمة اليونانية؟</h2>
+        </div>
+        <p class="chapter-sub">دليل مختصر لتحليل أيّ فعل أو اسم يونانيّ إعرابيًّا خطوة بخطوة.</p>
+
+        <div class="section">
+          <div class="subsection-title">إعراب الفعل</div>
+          <p>عند إعراب أي فعل يوناني، يلزم تحديد خمسة عناصر بالترتيب:</p>
+          <div class="cards">
+            <div class="card"><div class="meaning"><b>1. الجذر</b><br>الأحرف الثابتة التي لا تتغيّر (مثل <span class="gk">λυ-</span> في <span class="gk">λύω</span>)<div class="meaning-en">Root: the fixed letters that never change (e.g. λυ- in λύω)</div></div></div>
+            <div class="card"><div class="meaning"><b>2. الزمن</b><br>حاضر / مستقبل / ماضٍ ناقص... يُعرف من اللاحقة وزيادة السين أو الزيادة الأولية <span class="gk">ἐ-</span><div class="meaning-en">Tense: present / future / imperfect... known from the ending and the σ or ἐ- augment</div></div></div>
+            <div class="card"><div class="meaning"><b>3. الشخص والعدد</b><br>متكلم/مخاطب/غائب × مفرد/جمع، من اللاحقة الأخيرة (<span class="gk">-ω, -εις, -ει, -ομεν, -ετε, -ουσι</span>)<div class="meaning-en">Person and number: 1st/2nd/3rd × singular/plural, from the final ending</div></div></div>
+            <div class="card"><div class="meaning"><b>4. الصيغة (Mood)</b><br>خبري / مصدر / أمر... (في هذا الدرس: خبري ومصدر فقط)<div class="meaning-en">Mood: indicative / infinitive / imperative... (this lesson covers only indicative and infinitive)</div></div></div>
+            <div class="card"><div class="meaning"><b>5. البناء (Voice)</b><br>مبني للمعلوم (فاعل) أو للمجهول — كل أفعال هذا الدرس مبنية للمعلوم<div class="meaning-en">Voice: active or passive — every verb in this lesson is active</div></div></div>
+          </div>
+          <div class="verse-box">
+            <span class="gk">ἔλυον</span>
+            <span class="mean">إعراب: فعل ماضٍ ناقص، جذره <span class="gk">λυ-</span>، الشخص الأول أو الثالث (يُميَّز بالسياق)، جمع أو مفرد بحسب موقعه، صيغة خبرية، بناء معلوم — «كنتُ/كانوا أحُلّ/يحلّون».</span>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="subsection-title">إعراب الاسم</div>
+          <p>عند إعراب أي اسم، يلزم تحديد أربعة عناصر:</p>
+          <div class="cards">
+            <div class="card"><div class="meaning"><b>1. الجنس</b><br>مذكر/مؤنث/محايد — يُعرف من أداة التعريف المرافقة (<span class="gk">ὁ / ἡ / τό</span>)<div class="meaning-en">Gender: masculine/feminine/neuter — known from the accompanying article</div></div></div>
+            <div class="card"><div class="meaning"><b>2. العدد</b><br>مفرد أو جمع، من شكل النهاية<div class="meaning-en">Number: singular or plural, from the ending's form</div></div></div>
+            <div class="card"><div class="meaning"><b>3. الحالة الإعرابية</b><br>فاعلية (Nom) / نداء (Voc) / مفعولية (Acc) / إضافية (Gen) / جرّية (Dat)<div class="meaning-en">Case: Nominative / Vocative / Accusative / Genitive / Dative</div></div></div>
+            <div class="card"><div class="meaning"><b>4. الوظيفة النحوية</b><br>فاعل، مفعول به مباشر أو غير مباشر، مضاف إليه، منادى...<div class="meaning-en">Syntactic function: subject, direct or indirect object, possessor, vocative...</div></div></div>
+          </div>
+          <div class="verse-box">
+            <span class="gk">τῷ νεανίᾳ</span>
+            <span class="mean">إعراب: اسم مذكر مفرد، حالة الجرّ (Dative)، وظيفته النحوية غالبًا مفعول به غير مباشر «للشابّ».</span>
+          </div>
+          <div class="key-point">
+            قاعدة ذهبية: أداة التعريف اليونانية (<span class="gk">ὁ, ἡ, τό</span> وتصاريفها) تتغيّر بنفس نمط الاسم الذي تسبقه تقريبًا، فهي أفضل دليل سريع على جنس الاسم وحالته الإعرابية قبل النظر إلى نهاية الاسم نفسه.
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= EXAM 1 ================= -->
+      <section class="chapter ch-6" id="exam1">
+        <div class="chapter-head">
+          <div class="chapter-num">✓</div>
+          <h2>اختبار شامل — الدرس الأول (الأبجدية)</h2>
+        </div>
+        <p class="chapter-sub">10 أسئلة تغطّي الحروف، حروف العلّة، التنفّس، والحروف الساكنة، مع شرح علمي لكل إجابة.</p>
+
+        <div class="score-box">
+          <span>تمت مراجعة <b id="exam1Count">0</b> من 10 أسئلة</span>
+          <button class="reveal-btn" onclick="revealAllIn('exam1Block', this)">أظهر كل الإجابات</button>
+        </div>
+        <div class="exercise-block" id="exam1Block">
+          <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext">ما الفرق بين <span class="gk">Ε ε</span> و<span class="gk">Η η</span>؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">الأول قصير (Epsilon)، والثاني طويل (Ệta).<div class="ans-line-en">The first is short (Epsilon), and the second is long (Ệta).</div></div><div class="why">التمييز بين طول حرف العلّة أساسي في تحديد وزن المقطع والنبر، ويؤثر لاحقًا على اختيار لواحق التصريف الصحيحة.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">2</span><span class="qtext">اذكر حروف العلّة «المشكوك فيها» الثلاثة.</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line gk">α, ι, υ</div><div class="why">تُسمّى مشكوكًا فيها لأنها تُنطق أحيانًا طويلة وأحيانًا قصيرة بحسب موضعها، بخلاف <span class="gk">η, ω</span> (طويلتان دومًا) و<span class="gk">ε, ο</span> (قصيرتان دومًا).</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">3</span><span class="qtext">ما نطق الثنائية <span class="gk">ου</span>؟ اذكر مثالًا.</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">تُنطق «و» ممدودة (كضمّة طويلة)، كما في <span class="gk">οὐρανός</span> (السماء).<div class="ans-line-en">It's pronounced as a long ‘oo’ sound, as in οὐρανός (heaven).</div></div><div class="why">هي ثنائية ظاهرة (Proper Diphthong) يندمج فيها الصوتان في مقطع واحد لا يُنطقان منفصلين.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">4</span><span class="qtext">ما الفرق بين النَّفَس الناعم والنَّفَس الخشن؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">الناعم لا يضيف صوتًا؛ الخشن يضيف صوت «هـ» قبل حرف العلّة.<div class="ans-line-en">Smooth breathing adds no sound; rough breathing adds an ‘h’ sound before the vowel.</div></div><div class="why">كل كلمة تبدأ بحرف علّة تحمل إحدى العلامتين وجوبًا، وهذا يفسّر لماذا تتحوّل <span class="gk">οὐ</span> إلى <span class="gk">οὐχ</span> قبل الكلمات ذات النفَس الخشن.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">5</span><span class="qtext">أي حرف يحمل نفَسًا خشنًا دائمًا إذا جاء في أول الكلمة؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line gk">ρ (وكذلك υ)</div><div class="why">لهذا نجد التحويل الحرفي لكلمات تبدأ بـ<span class="gk">ρ</span> يُكتب دائمًا rh، كما في <span class="gk">ῥαψῳδία</span> = rhapsōdia.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">6</span><span class="qtext">صنِّف الحروف التالية حسب مخرجها: <span class="gk">κ, π, τ</span></span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line"><span class="gk">κ</span> حلقية، <span class="gk">π</span> شفوية، <span class="gk">τ</span> أسنانية<div class="ans-line-en">κ is guttural, π is labial, τ is dental.</div></div><div class="why">وكلها من فئة «المهموسة/الخفيفة Hard» مقارنة بمقابلاتها المجهورة <span class="gk">γ, β, δ</span> والمطبقة <span class="gk">χ, φ, θ</span> في نفس المخرج.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">7</span><span class="qtext">ما ناتج اجتماع حرف شفوي (<span class="gk">π/β/φ</span>) مع <span class="gk">σ</span>؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line gk">ψ</div><div class="why">هذه القاعدة ستُستخدم عمليًا في تصريف الأفعال عند تكوين زمن المستقبل، كما رأينا في <span class="gk">πέμπω ← πέμψω</span>.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">8</span><span class="qtext">أين تُكتب صورة <span class="gk">ς</span> من حرف السيغما بدل <span class="gk">σ</span>؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">فقط في نهاية الكلمة.<div class="ans-line-en">Only at the end of a word.</div></div><div class="why">هذا هو الحرف اليوناني الوحيد الذي له صورتان صغيرتان بحسب الموضع داخل الكلمة أو في آخرها.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">9</span><span class="qtext">حوِّل حرفيًا: <span class="gk">Χριστός</span></span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">Christos</div><div class="why"><span class="gk">Χ</span>=ch، <span class="gk">σ</span>=s، وبقية الحروف تقابل نظائرها اللاتينية مباشرة.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">10</span><span class="qtext">ما الفرق بين الثنائية الظاهرة والثنائية الخفية (Improper)؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">الظاهرة ينطق فيها الصوتان مقطعًا واحدًا مسموعًا (مثل <span class="gk">αι, ει, ου</span>)، أمّا الخفية فتكون فيها الـ<span class="gk">ι</span> صامتة مكتوبة تحت السطر (مثل <span class="gk">ᾳ, ῃ, ῳ</span>) وتدل فقط على وظيفة إعرابية.<div class="ans-line-en">In proper diphthongs both sounds blend into one heard syllable (like αι, ει, ου); in improper diphthongs the ι is silent and written as a subscript (like ᾳ, ῃ, ῳ), marking only a grammatical case.</div></div><div class="why">إغفال الـ«يوتا» تحت السطر خطأ إملائي شائع عند المبتدئين لأنها لا تُسمع في النطق لكنها ضرورية للتمييز بين حالات الإعراب المختلفة مثل الجرّية.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= EXAM 2 ================= -->
+      <section class="chapter ch-1" id="exam2">
+        <div class="chapter-head">
+          <div class="chapter-num">✓</div>
+          <h2>اختبار شامل — الدرس الثاني (الأفعال)</h2>
+        </div>
+        <p class="chapter-sub">10 أسئلة تغطّي التصريف والنفي والمصدر، مع شرح علمي لكل إجابة.</p>
+
+        <div class="score-box">
+          <span>تمت مراجعة <b id="exam2Count">0</b> من 10 أسئلة</span>
+          <button class="reveal-btn" onclick="revealAllIn('exam2Block', this)">أظهر كل الإجابات</button>
+        </div>
+        <div class="exercise-block" id="exam2Block">
+          <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext">صرِّف <span class="gk">λύω</span> في الشخص الثالث المفرد، الأزمنة الثلاثة.</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line gk">λύει (حاضر) — λύσει (مستقبل) — ἔλυε(ν) (ماضٍ ناقص)</div><div class="why">لاحظ ظهور سين المستقبل، وزيادة <span class="gk">ἐ-</span> في الماضي الناقص فقط، بينما يبقى الحاضر بلا زيادة ولا سين.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">2</span><span class="qtext">ما الفرق الوظيفي بين <span class="gk">οὐ</span> و<span class="gk">μή</span>؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line"><span class="gk">οὐ</span> لنفي الفعل الخبري، <span class="gk">μή</span> لنفي المصدر والصيغ غير الخبرية.<div class="ans-line-en">οὐ negates the indicative verb; μή negates the infinitive and non-indicative moods.</div></div><div class="why">هذا التمييز يُعدّ من أهم فروق النحو اليوناني عن العربية والإنجليزية، حيث لا توجد أداة نفي واحدة تغطي كل الحالات.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">3</span><span class="qtext">لماذa تصبح <span class="gk">οὐ</span> أحيانًا <span class="gk">οὐκ</span> أو <span class="gk">οὐχ</span>؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">بحسب الحرف الذي يليها: <span class="gk">οὐκ</span> قبل نفَس ناعم، <span class="gk">οὐχ</span> قبل نفَس خشن.<div class="ans-line-en">It depends on the following letter: οὐκ before smooth breathing, οὐχ before rough breathing.</div></div><div class="why">قاعدة صوتية بحتة لتسهيل النطق (تفادي التقاء صوتين متنافرين)، مشابهة لتفاعل «أل» الشمسية والقمرية في العربية من حيث المبدأ الصوتي لا الآلية.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">4</span><span class="qtext">ما علامة زمن المستقبل في الأفعال اليونانية؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">إضافة <span class="gk">-σ-</span> بعد جذر الفعل.<div class="ans-line-en">By adding -σ- after the verb’s root.</div></div><div class="why">وإذا انتهى الجذر بحرف ساكن (شفوي/حلقي/أسناني)، يندمج معه السين ليعطي <span class="gk">ψ / ξ / σ</span> بحسب قواعد الحروف المزدوجة.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">5</span><span class="qtext">ما علامة الماضي الناقص؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">الزيادة <span class="gk">ἐ-</span> قبل الجذر، مع لواحق خاصة (<span class="gk">-ον, -ες, -ε(ν), -ομεν, -ετε, -ον</span>).<div class="ans-line-en">The augment ἐ- before the root, with special endings (-ον, -ες, -ε(ν), -ομεν, -ετε, -ον).</div></div><div class="why">تُسمّى «الزيادة» (augment) وهي السمة المميّزة لكل الأزمنة الماضية في اليونانية (الناقص والتام البسيط).</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">6</span><span class="qtext">حوِّل <span class="gk">λύειν</span> إلى المستقبل.</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line gk">λύσειν</div><div class="why">مصدر المستقبل يُبنى بنفس طريقة تصريفه: جذر + <span class="gk">σ</span> + لاحقة المصدر <span class="gk">-ειν</span>.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">7</span><span class="qtext">ما دلالة الماضي الناقص عكس المستقبل والحاضر من حيث «نوع الفعل» (استمرار/تكرار مقابل نقطة واحدة)؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">الماضي الناقص يفيد فعلًا مستمرًّا أو متكرّرًا في الماضي («كان يفعل»)، لا فعلًا مكتملًا مرة واحدة.<div class="ans-line-en">The imperfect expresses a continuous or repeated past action ('was doing'), not a single completed action.</div></div><div class="why">هذا ما يُسمّى بـ«الجانب الفعلي» (Aspect) في اليونانية، وهو أهمّ من «الزمن» بحدّ ذاته في كثير من الأحيان لفهم المعنى الدقيق للجملة.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">8</span><span class="qtext">ترجِم: <span class="gk">θέλουσι νῦν χορεύειν</span></span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">يريدون أن يرقصوا الآن.</div><div class="ans-line-en">They want to dance now.</div><div class="why"><span class="gk">θέλουσι</span> فعل مضارع جمع غائب يتبعه مصدر <span class="gk">χορεύειν</span> كمفعول به (بنية «فعل إرادة + مصدر» شائعة جدًّا).</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">9</span><span class="qtext">ما إعراب <span class="gk">ἔγραφε</span> بالكامل؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">فعل ماضٍ ناقص، الغائب المفرد، مبني للمعلوم، من <span class="gk">γράφω</span>.<div class="ans-line-en">Imperfect tense, third person singular, active voice, from γράφω.</div></div><div class="why">التعرف يتم بثلاث علامات مجتمعة: الزيادة <span class="gk">ἐ-</span>، الجذر <span class="gk">γραφ-</span>، واللاحقة <span class="gk">-ε</span> الخاصة بالغائب المفرد في هذا الزمن.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">10</span><span class="qtext">لماذا يُعدّ النفي المزدوج <span class="gk">οὐδὲν οὐκ ἔχω</span> توكيدًا لا إبطالًا؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">لأن قواعد اليونانية الكوينية تسمح بتراكم أدوات النفي لتشديد معنى واحد بدل إلغائه.<div class="ans-line-en">Because Koine Greek grammar allows stacking negatives to intensify one meaning rather than cancel it out.</div></div><div class="why">هذا يخالف منطق الرياضيات (سالب × سالب = موجب) لكنه يطابق ما نجده أيضًا في العربية العامية («ما شفت حد ولا حاجة») والإنجليزية غير الرسمية.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= EXAM 3 ================= -->
+      <section class="chapter ch-2" id="exam3">
+        <div class="chapter-head">
+          <div class="chapter-num">✓</div>
+          <h2>اختبار شامل — الدرس الثالث (أسماء الصرف الأول)</h2>
+        </div>
+        <p class="chapter-sub">10 أسئلة تغطّي التصريف الاسمي المؤنث والمذكر، مع شرح علمي لكل إجابة.</p>
+
+        <div class="score-box">
+          <span>تمت مراجعة <b id="exam3Count">0</b> من 10 أسئلة</span>
+          <button class="reveal-btn" onclick="revealAllIn('exam3Block', this)">أظهر كل الإجابات</button>
+        </div>
+        <div class="exercise-block" id="exam3Block">
+          <div class="qa"><div class="q"><span class="qnum">1</span><span class="qtext">ما الأنماط الثلاثة لمؤنث الصرف الأول؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">نمط <span class="gk">-η</span>، ونمط <span class="gk">-α</span> النقيّة (بعد ε/ι/ρ)، ونمط <span class="gk">-α</span> غير النقيّة.<div class="ans-line-en">The -η pattern, the pure -α pattern (after ε/ι/ρ), and the impure -α pattern.</div></div><div class="why">الفرق بينها يظهر فقط في المفرد (خاصة الإضافية والجرّية)، بينما يتّحد الجمع في الأنماط الثلاثة.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">2</span><span class="qtext">لماذا تُسمّى <span class="gk">χώρα</span> «ألفًا نقيّة» بينما <span class="gk">δόξα</span> «ألفًا غير نقيّة»؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">لأن الألف في <span class="gk">χώρα</span> تسبقها <span class="gk">ρ</span> (من حروف ε/ι/ρ التي تُبقي الألف نقيّة في كل الحالات)، بينما تسبق الألف في <span class="gk">δόξα</span> حرفًا آخر (<span class="gk">ξ</span>) فتتحوّل الألف إلى <span class="gk">η</span> في الإضافية والجرّية المفردتين.<div class="ans-line-en">Because the alpha in χώρα is preceded by ρ (one of the letters ε/ι/ρ that keep the alpha pure in every case), while the alpha in δόξα is preceded by a different letter (ξ), so it shifts to η in the singular genitive and dative.</div></div><div class="why">هذه القاعدة الصوتية تفسّر لماذا نقول <span class="gk">τῆς χώρας</span> بالألف لكن <span class="gk">τῆς δόξης</span> بالإيتا.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">3</span><span class="qtext">صرِّف <span class="gk">ἀρετή</span> في حالة الإضافة (Genitive) مفردًا وجمعًا.</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line gk">τῆς ἀρετῆς (مفرد) — τῶν ἀρετῶν (جمع)</div><div class="why">لاحظ أن أداة التعريف تتغيّر أيضًا حسب العدد: <span class="gk">τῆς</span> للمفرد المؤنث، <span class="gk">τῶν</span> للجمع (كل الأجناس تشترك في <span class="gk">τῶν</span> بصيغة الإضافة الجمعية).</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">4</span><span class="qtext">ما الذي يميّز الأسماء المذكرة في الصرف الأول عن المؤنثة، رغم أن كليهما ينتهي أحيانًا بـ<span class="gk">-η</span> صوتيًّا مشابهًا؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">أداة التعريف <span class="gk">ὁ</span> بدل <span class="gk">ἡ</span>، وصيغة النداء الخاصة المقصورة، والإضافة المفردة بـ<span class="gk">-ου</span> بدل <span class="gk">-ης</span>.<div class="ans-line-en">The article ὁ instead of ἡ, a distinct contracted vocative form, and the singular genitive in -ου instead of -ης.</div></div><div class="why">مثال: <span class="gk">προφήτης</span> (مذكر) إضافته <span class="gk">τοῦ προφήτου</span>، بينما لو كانت مؤنثة من نمط <span class="gk">-η</span> لكانت إضافتها <span class="gk">-ης</span> لا <span class="gk">-ου</span>.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">5</span><span class="qtext">ما نداء المفرد لكلمة <span class="gk">προφήτης</span>؟ ولماذا هو صيغة استثنائية؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line gk">ὦ προφῆτα</div><div class="why">النهاية تُقصَر إلى <span class="gk">-α</span> بدل الإبقاء على <span class="gk">-ης</span>، وهذا شكل خاص بمذكر الصرف الأول في النداء يجب حفظه فردًا فردًا لا قياسًا.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">6</span><span class="qtext">أعرِب <span class="gk">τὸν νεανίαν</span> إعرابًا كاملًا.</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">اسم مذكر، مفرد، حالة المفعولية (Accusative)، وظيفته الغالبة مفعول به مباشر «الشابَّ».<div class="ans-line-en">Masculine noun, singular, accusative case, most commonly functioning as a direct object — 'the young man'.</div></div><div class="why">أداة التعريف <span class="gk">τὸν</span> (مذكر مفرد مفعولية) تؤكّد الجنس والحالة قبل النظر إلى نهاية الاسم <span class="gk">-αν</span>.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">7</span><span class="qtext">ما الفرق بين <span class="gk">ἡ βασιλεία</span> و<span class="gk">ἡ βασίλεια</span>؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">الأولى «مملكة» (اسم مجرّد للحكم)، والثانية «ملكة» (شخص الحاكمة).<div class="ans-line-en">The first is 'kingdom' (an abstract noun for the rule), and the second is 'queen' (the ruling person).</div></div><div class="why">كلمتان متشابهتان جدًّا في الرسم يفرّق بينهما موضع النبر والسياق، وهذا مثال جيّد على أهمية النبر (accent) في التمييز بين المعاني.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">8</span><span class="qtext">ما وظيفة أداة التعريف اليونانية في تحديد الإعراب سريعًا؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">هي أسرع وسيلة لمعرفة الجنس والعدد والحالة الإعرابية للاسم الذي تسبقه.<div class="ans-line-en">It's the fastest way to know the gender, number, and case of the noun it precedes.</div></div><div class="why">لأن أداة التعريف تتصرّف بانتظام أكبر من الاسم نفسه (الذي قد يخضع لقواعد صوتية خاصة)، فهي أول ما يجب النظر إليه عمليًّا عند التحليل.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">9</span><span class="qtext">ترجِم وأعرِب: <span class="gk">δόξα τῇ Μαρίᾳ</span></span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">المجد لمريم — <span class="gk">δόξα</span> فاعلية (اسم استعمل نداءً/تعجّبًا)، <span class="gk">τῇ Μαρίᾳ</span> جرّية مفردة تفيد الاستحقاق.<div class="ans-line-en">Glory to Mary — δόξα is nominative (used as an exclamation), τῇ Μαρίᾳ is singular dative expressing the recipient.</div></div><div class="why">حالة الجرّ في اليونانية تفيد أحيانًا معنى «اللام» العربية (لأجل/من أجل)، وهذا استخدام شائع جدًّا في الصيغ الليتورجية.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">10</span><span class="qtext">لماذا يتّفق الجمع في كل أنماط مؤنث الصرف الأول رغم اختلاف المفرد؟</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">لأن اللواحق الجمعية (<span class="gk">-αι, -ας, -ῶν, -αις</span>) نشأت تاريخيًّا من نفس الأصل الصوتي بصرف النظر عن حرف العلّة الأخير في المفرد.<div class="ans-line-en">Because the plural endings (-αι, -ας, -ῶν, -αις) historically developed from the same sound root regardless of the singular’s final vowel.</div></div><div class="why">هذا يُسهِّل الحفظ عمليًّا: يكفي حفظ نمط جمع واحد لكل أسماء الصرف الأول المؤنثة أيًّا كان نمط مفردها.</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= MIDTERM EXAM ================= -->
+      <section class="chapter ch-3" id="midterm">
+        <div class="chapter-head">
+          <div class="chapter-num">★</div>
+          <h2>اختبار منتصف الفصل المتوقع (Midterm)</h2>
+        </div>
+        <p class="chapter-sub">16 سؤالًا بأنماط أسئلة الامتحان الفعلية — اختيار من متعدد، إكمال، إعراب، وترجمة — تجمع بين الدروس الثلاثة، مع شرح لكل إجابة.</p>
+
+        <div class="score-box">
+          <span>تمت مراجعة <b id="midtermCount">0</b> من 16 سؤالًا</span>
+          <button class="reveal-btn" onclick="revealAllIn('midtermBlock', this)">أظهر كل الإجابات</button>
+        </div>
+
+        <div class="exercise-block" id="midtermBlock">
+          <h4>القسم الأول — اختيار من متعدد (Multiple Choice)</h4>
+
+          <div class="qa">
+            <div class="q"><span class="qnum">1</span><span class="qtext"><span class="qtype-tag">اختيارات</span>أيّ من حروف العلّة التالية طويل دائمًا؟</span></div>
+            <div class="mcq-options" id="mq1">
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq1',false)">α</div>
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq1',false)">ε</div>
+              <div class="mcq-option gk" data-correct="true" onclick="selectMcq(this,'mq1',true)">η</div>
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq1',false)">ο</div>
+            </div>
+            <div class="mcq-explain" id="mq1-exp"><b>الإجابة الصحيحة: <span class="gk">η</span></b><br>لأن <span class="gk">η</span> و<span class="gk">ω</span> طويلتان دومًا، بينما <span class="gk">ε</span> و<span class="gk">ο</span> قصيرتان دومًا، و<span class="gk">α</span> من المشكوك فيها (تتغيّر بحسب الموضع).</div>
+          </div>
+
+          <div class="qa">
+            <div class="q"><span class="qnum">2</span><span class="qtext"><span class="qtype-tag">اختيارات</span>ما نطق الثنائية الصوتية <span class="gk">ει</span>؟</span></div>
+            <div class="mcq-options" id="mq2">
+              <div class="mcq-option" data-correct="false" onclick="selectMcq(this,'mq2',false)">eu</div>
+              <div class="mcq-option" data-correct="true" onclick="selectMcq(this,'mq2',true)">ei</div>
+              <div class="mcq-option" data-correct="false" onclick="selectMcq(this,'mq2',false)">oi</div>
+              <div class="mcq-option" data-correct="false" onclick="selectMcq(this,'mq2',false)">ai</div>
+            </div>
+            <div class="mcq-explain" id="mq2-exp"><b>الإجابة الصحيحة: ei</b><br><span class="gk">ει</span> ثنائية ظاهرة (Proper Diphthong) ينطق فيها الصوتان معًا في مقطع واحد "إي".</div>
+          </div>
+
+          <div class="qa">
+            <div class="q"><span class="qnum">3</span><span class="qtext"><span class="qtype-tag">اختيارات</span>أي أداة نفي تُستخدم مع المصدر (Infinitive)؟</span></div>
+            <div class="mcq-options" id="mq3">
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq3',false)">οὐ</div>
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq3',false)">οὐκ</div>
+              <div class="mcq-option gk" data-correct="true" onclick="selectMcq(this,'mq3',true)">μή</div>
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq3',false)">οὐχ</div>
+            </div>
+            <div class="mcq-explain" id="mq3-exp"><b>الإجابة الصحيحة: <span class="gk">μή</span></b><br><span class="gk">οὐ</span> وتفرّعاتها (<span class="gk">οὐκ, οὐχ</span>) تُستخدم مع الفعل الخبري فقط، أمّا <span class="gk">μή</span> فتُستخدم مع المصدر والصيغ غير الخبرية.</div>
+          </div>
+
+          <div class="qa">
+            <div class="q"><span class="qnum">4</span><span class="qtext"><span class="qtype-tag">اختيارات</span>ما مستقبل الفعل <span class="gk">γράφω</span>؟</span></div>
+            <div class="mcq-options" id="mq4">
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq4',false)">γράφσω</div>
+              <div class="mcq-option gk" data-correct="true" onclick="selectMcq(this,'mq4',true)">γράψω</div>
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq4',false)">ἔγραφον</div>
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq4',false)">γράφειν</div>
+            </div>
+            <div class="mcq-explain" id="mq4-exp"><b>الإجابة الصحيحة: <span class="gk">γράψω</span></b><br>الجذر الشفوي <span class="gk">φ</span> يندمج مع سين المستقبل ليعطي <span class="gk">ψ</span> (شفوية + σ = ψ)، فينتج <span class="gk">γράψω</span> لا <span class="gk">γράφσω</span>.</div>
+          </div>
+
+          <div class="qa">
+            <div class="q"><span class="qnum">5</span><span class="qtext"><span class="qtype-tag">اختيارات</span>ما أداة التعريف المذكرة في حالة الإضافة (Genitive) المفرد؟</span></div>
+            <div class="mcq-options" id="mq5">
+              <div class="mcq-option gk" data-correct="true" onclick="selectMcq(this,'mq5',true)">τοῦ</div>
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq5',false)">τῆς</div>
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq5',false)">τῷ</div>
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq5',false)">τόν</div>
+            </div>
+            <div class="mcq-explain" id="mq5-exp"><b>الإجابة الصحيحة: <span class="gk">τοῦ</span></b><br>كما في <span class="gk">τοῦ προφήτου</span> (للنبيّ) أو <span class="gk">τοῦ νεανίου</span> (للشابّ)؛ <span class="gk">τῆς</span> للمؤنث، <span class="gk">τῷ</span> للجرّية، <span class="gk">τόν</span> للمفعولية.</div>
+          </div>
+
+          <div class="qa">
+            <div class="q"><span class="qnum">6</span><span class="qtext"><span class="qtype-tag">اختيارات</span>أيّ من هذه الأسماء مذكر رغم انتهائه بصورة شبيهة بالمؤنث؟</span></div>
+            <div class="mcq-options" id="mq6">
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq6',false)">ἀρετή</div>
+              <div class="mcq-option gk" data-correct="true" onclick="selectMcq(this,'mq6',true)">προφήτης</div>
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq6',false)">δόξα</div>
+              <div class="mcq-option gk" data-correct="false" onclick="selectMcq(this,'mq6',false)">χώρα</div>
+            </div>
+            <div class="mcq-explain" id="mq6-exp"><b>الإجابة الصحيحة: <span class="gk">προφήτης</span></b><br>يحمل أداة التعريف المذكرة <span class="gk">ὁ</span> رغم انتهائه بـ<span class="gk">-ης</span> التي تشبه بعض نهايات المؤنث؛ أداة التعريف هي المعيار الحاسم لا شكل النهاية.</div>
+          </div>
+
+          <h4 style="margin-top:22px">القسم الثاني — أكمل الفراغ (Fill in the Blank)</h4>
+
+          <div class="qa"><div class="q"><span class="qnum">7</span><span class="qtext"><span class="qtype-tag">أكمل</span>كلمة <span class="gk">εὐαγγέλιον</span> تُنطق ..... لأن الـ <span class="gk">ε</span> تحمل نفَسًا ناعمًا لا خشنًا.</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line">إفانغيليون (euangelion)</div><div class="why">النفَس الناعم لا يضيف صوت «هـ»، فالكلمة تبدأ بحرف العلّة مباشرة.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">8</span><span class="qtext"><span class="qtype-tag">أكمل</span>مضارع الغائب المفرد للفعل <span class="gk">λέγω</span> هو .....</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line gk">λέγει</div><div class="why">لاحقة الغائب المفرد في المضارع الخبري هي <span class="gk">-ει</span> تُضاف مباشرة إلى الجذر <span class="gk">λεγ-</span>.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">9</span><span class="qtext"><span class="qtype-tag">أكمل</span>جمع <span class="gk">ἡ κόρη</span> في حالة الفاعلية هو .....</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line gk">αἱ κόραι</div><div class="why">اسم مؤنث نمط <span class="gk">-η</span>، وجمع الفاعلية لكل أنماط مؤنث الصرف الأول ينتهي بـ<span class="gk">-αι</span> بصرف النظر عن نمط المفرد.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">10</span><span class="qtext"><span class="qtype-tag">أكمل</span>نداء المفرد لكلمة <span class="gk">δεσπότης</span> هو .....</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإجابة</button>
+            <div class="answer"><div class="ans-line gk">ὦ δέσποτα</div><div class="why">نداء مفرد مذكر الصرف الأول ينتهي بألف قصيرة مقصورة <span class="gk">-α</span>، لا بـ<span class="gk">-ης</span> ولا <span class="gk">-η</span>.</div></div>
+          </div>
+
+          <h4 style="margin-top:22px">القسم الثالث — إعراب (Parsing)</h4>
+
+          <div class="qa"><div class="q"><span class="qnum">11</span><span class="qtext"><span class="qtype-tag">أعرب</span>أعرب <span class="gk">τὴν ἀλήθειαν</span> في جملة: <span class="gk">ὁ κριτὴς οὐ λέξει τὴν ἀλήθειαν τῷ νεανίᾳ.</span></span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإعراب</button>
+            <div class="answer"><div class="ans-line">اسم مؤنث، مفرد، حالة المفعولية (Accusative)، مفعول به مباشر للفعل <span class="gk">λέξει</span>.<div class="ans-line-en">Feminine noun, singular, accusative case, direct object of the verb λέξει.</div></div><div class="why">أداة التعريف <span class="gk">τήν</span> (مؤنث مفرد مفعولية) هي أسرع دليل على الحالة الإعرابية قبل النظر لنهاية الاسم <span class="gk">-αν</span>.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">12</span><span class="qtext"><span class="qtype-tag">أعرب</span>أعرب الفعل <span class="gk">ἔλυον</span> إعرابًا كاملًا (الجذر، الزمن، الصيغة، البناء).</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإعراب</button>
+            <div class="answer"><div class="ans-line">فعل ماضٍ ناقص، جذره <span class="gk">λυ-</span>، الشخص الأول المفرد أو الثالث الجمع (يُحدَّد بالسياق)، صيغة خبرية، بناء معلوم.<div class="ans-line-en">Imperfect verb, root λυ-, first person singular or third person plural (determined by context), indicative mood, active voice.</div></div><div class="why">الزيادة <span class="gk">ἐ-</span> في أول الفعل هي العلامة القاطعة للماضي الناقص، واللاحقة <span class="gk">-ον</span> مشتركة بين المتكلم المفرد والغائب الجمع، فيميّز بينهما السياق فقط.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">13</span><span class="qtext"><span class="qtype-tag">أعرب</span>أعرب <span class="gk">τῷ προφήτῃ</span>.</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الإعراب</button>
+            <div class="answer"><div class="ans-line">اسم مذكر، مفرد، حالة الجرّ (Dative)، الوظيفة الغالبة مفعول به غير مباشر «للنبيّ».<div class="ans-line-en">Masculine noun, singular, dative case, most commonly functioning as an indirect object — 'to the prophet'.</div></div><div class="why">أداة التعريف <span class="gk">τῷ</span> (مذكر/محايد مفرد جرّية) تؤكّد الجنس والحالة، والثنائية الخفية <span class="gk">ῃ</span> في نهاية الاسم تطابق حالة الجرّ في نمط <span class="gk">-ης</span> المذكر.</div></div>
+          </div>
+
+          <h4 style="margin-top:22px">القسم الرابع — ترجمة (Translation)</h4>
+
+          <div class="qa"><div class="q"><span class="qnum">14</span><span class="qtext"><span class="qtype-tag">ترجمة</span>ترجِم إلى العربية: <span class="gk">πιστεύομεν καὶ δοξάζομεν τὸν θεόν.</span></span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الترجمة</button>
+            <div class="answer"><div class="ans-line">نحن نؤمن ونمجِّد الله.</div><div class="ans-line-en">We believe and glorify God.</div><div class="why">فعلان مضارعان جمع متكلم معطوفان بـ<span class="gk">καί</span>، ومفعولهما المشترك <span class="gk">τὸν θεόν</span> في حالة المفعولية.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">15</span><span class="qtext"><span class="qtype-tag">ترجمة</span>ترجِم إلى اليونانية: «التلاميذ يؤمنون بالحقّ.»</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الترجمة</button>
+            <div class="answer"><div class="ans-line gk">οἱ μαθηταὶ πιστεύουσι τῇ ἀληθείᾳ.</div><div class="why"><span class="gk">πιστεύω</span> يتبعه مفعول في حالة الجرّ لا المفعولية، فتأتي <span class="gk">ἀλήθεια</span> بصيغة الجرّية <span class="gk">τῇ ἀληθείᾳ</span>.</div></div>
+          </div>
+          <div class="qa"><div class="q"><span class="qnum">16</span><span class="qtext"><span class="qtype-tag">ترجمة</span>ترجِم إلى اليونانية: «لن نرى المجد الآن، لكننا سنؤمن.»</span></div>
+            <button class="reveal-btn" onclick="toggleAnswer(this)">إظهار الترجمة</button>
+            <div class="answer"><div class="ans-line gk">οὐ βλέψομεν τὴν δόξαν νῦν, ἀλλὰ πιστεύσομεν.</div><div class="why">فعلان مستقبلان جمع متكلم من <span class="gk">βλέπω</span> و<span class="gk">πιστεύω</span>، الأول منفيّ بـ<span class="gk">οὐ</span> لأنه فعل خبري.</div></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+    <footer>
+      صفحة دراسية لمادة اليونانية (يوناني) — الدرس الأول: الأبجدية، الأفعال، أسماء الصرف الأول.<br>
+      إعداد وتصميم: <span class="fname">J0HNTHAN</span> · Koine Greek Study Series
+    </footer>
+  </div>
+</div>
+
+<div class="gh-badge"><a href="https://github.com/J0HNTHAN" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px;"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" style="color:var(--primary-light); flex-shrink:0;"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Johnthan</a></div>
+
+<script>
+function toggleSidebar(open){
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebarOverlay');
+  const burger = document.getElementById('burgerBtn');
+  const willOpen = (typeof open === 'boolean') ? open : !sidebar.classList.contains('show');
+  sidebar.classList.toggle('show', willOpen);
+  overlay.classList.toggle('show', willOpen);
+  burger.classList.toggle('hidden', willOpen); // burger fades out while the panel is open — it reappears once closed
+  document.body.style.overflow = willOpen ? 'hidden' : '';
+}
+
+function toggleNav(el){
+  const section = el.parentElement;
+  section.classList.toggle('open');
+}
+
+function selectMcq(optionEl, groupId, isCorrect){
+  const group = document.getElementById(groupId);
+  if(group.classList.contains('locked')) return;
+  group.classList.add('locked');
+  Array.from(group.children).forEach(opt => {
+    opt.classList.add('locked');
+    if(opt === optionEl) opt.classList.add(isCorrect ? 'correct' : 'wrong');
+    else if(opt.getAttribute('data-correct') === 'true') opt.classList.add('correct');
+  });
+  const exp = document.getElementById(groupId + '-exp');
+  if(exp) exp.classList.add('open');
+  updateExamCount(group.closest('.exercise-block'));
+}
+
+function toggleAnswer(btn){
+  const ans = btn.nextElementSibling;
+  ans.classList.toggle('open');
+  btn.textContent = ans.classList.contains('open') ? 'إخفاء الإجابة' : 'إظهار الإجابة والشرح';
+  updateExamCount(btn.closest('.exercise-block'));
+}
+
+function updateExamCount(block){
+  if(!block || !block.id) return;
+  const counter = document.getElementById(block.id.replace('Block','Count'));
+  if(!counter) return;
+  const openedAnswers = block.querySelectorAll('.answer.open').length;
+  const openedMcq = block.querySelectorAll('.mcq-explain.open').length;
+  counter.textContent = openedAnswers + openedMcq;
+}
+
+function revealAllIn(blockId, toolbarBtn){
+  const block = document.getElementById(blockId);
+  if(!block) return;
+  const totalItems = block.querySelectorAll('.answer').length + block.querySelectorAll('.mcq-options').length;
+  const openItems = block.querySelectorAll('.answer.open').length + block.querySelectorAll('.mcq-explain.open').length;
+  const allOpen = totalItems === openItems;
+
+  block.querySelectorAll('.answer').forEach(a => a.classList.toggle('open', !allOpen));
+  block.querySelectorAll('.reveal-btn').forEach(b => b.textContent = !allOpen ? 'إخفاء الإجابة' : 'إظهار الإجابة والشرح');
+
+  block.querySelectorAll('.mcq-options').forEach(group => {
+    group.classList.add('locked');
+    Array.from(group.children).forEach(opt => {
+      opt.classList.add('locked');
+      if(opt.getAttribute('data-correct') === 'true') opt.classList.add('correct');
+    });
+    const exp = document.getElementById(group.id + '-exp');
+    if(exp) exp.classList.toggle('open', !allOpen);
+  });
+
+  if(toolbarBtn) toolbarBtn.textContent = !allOpen ? 'إخفاء كل الإجابات' : 'أظهر كل الإجابات';
+  updateExamCount(block);
+}
+
+function toggleTheme(){
+  const html = document.documentElement;
+  const isLight = html.getAttribute('data-theme') === 'light';
+  html.setAttribute('data-theme', isLight ? 'dark' : 'light');
+  document.getElementById('themeBtn').textContent = isLight ? '🌙' : '☀️';
+}
+
+function toggleLang(){
+  const isOn = document.body.classList.toggle('show-en');
+  document.getElementById('langBtnText').textContent = isOn ? 'AR' : 'EN';
+}
+
+// default to dark unless system prefers light AND user hasn't chosen — keep dark default per spec
+document.documentElement.setAttribute('data-theme','dark');
+
+// Scroll-spy
+const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+const targets = navLinks.map(l => document.querySelector(l.getAttribute('href'))).filter(Boolean);
+
+function onScroll(){
+  let currentId = null;
+  const scrollPos = window.scrollY + 120;
+  targets.forEach(t => {
+    if(t.offsetTop <= scrollPos) currentId = t.id;
+  });
+  navLinks.forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + currentId);
+  });
+  if(currentId){
+    const activeLink = document.querySelector('.nav-link[href="#'+currentId+'"]');
+    if(activeLink){
+      const section = activeLink.closest('.nav-section');
+      if(section && !section.classList.contains('open')) section.classList.add('open');
+    }
+  }
+}
+window.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+// close mobile sidebar after clicking a link
+navLinks.forEach(l => l.addEventListener('click', () => {
+  if(window.innerWidth <= 980) toggleSidebar(false);
+}));
+</script>
+
+</body>
+</html>
